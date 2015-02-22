@@ -209,10 +209,10 @@ if version >= 700
 endif
 if has("autocmd")
     " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
+    " Don't do it for commit messages, when the position is invalid or when
+    " inside an event handler (happens when dropping a file on gvim).
     autocmd BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
                 \   execute "normal! g`\"" |
                 \ endif
 endif " has autocmd
