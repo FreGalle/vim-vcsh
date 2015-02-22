@@ -26,6 +26,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sickill/vim-pasta'
 Bundle 'tpope/vim-repeat'
+Bundle 'christoomey/vim-tmux-navigator'
 
 
 call vundle#end()
