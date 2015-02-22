@@ -145,6 +145,11 @@ map <Tab> <C-w>w
 " Note that delimitMate shadows this in certain cases
 map <S-Tab> <C-w>W
 
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 " Make comma the new leader
 let mapleader=","
 " And let space function as colon
