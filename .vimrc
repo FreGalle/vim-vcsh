@@ -215,4 +215,8 @@ if has("autocmd")
                 \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
                 \   execute "normal! g`\"" |
                 \ endif
+
+    " At the time of writing vim sees .md as Modula-2
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    
 endif " has autocmd
