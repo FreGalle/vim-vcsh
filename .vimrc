@@ -1,5 +1,4 @@
 set nocompatible
-set shell=bash
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -59,6 +58,7 @@ let delimitMate_expand_space=1
 let delimitMate_expand_cr=1
 
 """ Regular stuff
+set shell=bash
 set number
 set title
 set showcmd
