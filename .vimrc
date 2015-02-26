@@ -49,7 +49,7 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_args = '-R'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java"] } 
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "tex"] } 
 
 let g:user_emmet_leader_key='<Leader>e'
 let g:user_emmet_mode='nv'
