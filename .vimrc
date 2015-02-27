@@ -27,6 +27,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'sickill/vim-pasta'
 Bundle 'tpope/vim-repeat'
 Bundle 'christoomey/vim-tmux-navigator'
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 
 
 call vundle#end()
@@ -68,9 +69,9 @@ set mouse=a
 set scrolloff=3
 set wildignore+=.git
 syntax enable
-" Note that iTerm2 should report xterm for other color schemes
-set background=dark
-silent! colorscheme solarized
+
+silent! colorscheme Tomorrow-Night
+
 " Enable filetype-based indenting rules
 " See vim.wikia.com on Indenting source code - automatic indentation
 filetype plugin indent on
@@ -132,7 +133,7 @@ au BufNewFile,BufRead *.gradle set filetype=groovy
 
 " Delimiter at 81
 set colorcolumn=+1
-highlight colorcolumn ctermbg=black ctermfg=red
+highlight colorcolumn ctermfg=red
 
 " Nice colors for highlighting
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white
@@ -203,17 +204,6 @@ set statusline+=%{&fileformat}\]\                   " file format
 set statusline+=%=                                  " right align
 set statusline+=%-10.(%l,%c%V%)\ %<%LL\ -\ %P       " offset
 
-" statusline colors
-if version >= 700
-    " default statusline highlight (colors)
-    hi StatusLine   ctermbg=3 ctermfg=0 gui=bold
-    " default non-current statusline highlight
-    hi StatusLineNC ctermbg=3 ctermfg=0 gui=bold
-    " statusline highlight when in INSERT mode
-    au InsertEnter * hi StatusLine ctermbg=6 ctermfg=0 gui=bold
-    " leaving INSERT mode reset to default
-    au InsertLeave * hi StatusLine ctermbg=3 ctermfg=0 gui=bold
-endif
 if has("autocmd")
     " When editing a file, always jump to the last known cursor position.
     " Don't do it for commit messages, when the position is invalid or when
