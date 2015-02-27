@@ -10,6 +10,9 @@ Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate' " Load before vim-endwise
 Plug 'tpope/vim-endwise'
@@ -60,6 +63,9 @@ let delimitMate_expand_cr=1
 let g:airline#extensions#tabline#enabled = 1"
 let g:airline_detect_paste=1
 let g:airline_powerline_fonts = 1
+
+" ----- jistr/vim-nerdtree-tabs -----
+let g:nerdtree_tabs_open_on_console_startup = 0
 
 
 """ Regular stuff
@@ -185,6 +191,10 @@ noremap gk k
 nnoremap <Leader>gc :Gcommit -v -q<CR>
 nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
 nnoremap <Leader>gs :Gstatus<CR>
+
+" ----- jistr/vim-nerdtree-tabs -----
+" Open/close NERDTree with ,t
+nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 
 " Make < and > keep the selection
 vnoremap < <gv
