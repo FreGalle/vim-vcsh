@@ -39,6 +39,7 @@ Plug 'thomwiggers/vim-colors-solarized'
 
 call plug#end()
 
+" ----- vim-scripts/bufexplorer.zip -----
 let g:bufExplorerShowRelativePath = 1
 let g:bufExplorerShowDirectories = 0
 let g:bufExplorerSplitBelow = 1
@@ -46,6 +47,7 @@ let g:bufExplorerSplitRight = 1
 " Set this to 0 when hidden is set
 let g:bufExplorerFindActive = 0 
 
+" ----- kien/ctrlp.vim -----
 let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_match_window = ',order:ttb,,,'
 let g:ctrlp_open_new_file = 'r'
