@@ -65,7 +65,7 @@ let g:user_emmet_mode='nv'
 let delimitMate_expand_space=1
 let delimitMate_expand_cr=1
 
-" Show airline for tabs too
+" ----- bling/vim-airline -----
 let g:airline#extensions#tabline#enabled = 1"
 let g:airline_detect_paste=1
 let g:airline_powerline_fonts = 1
