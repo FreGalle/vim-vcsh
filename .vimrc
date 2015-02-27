@@ -29,6 +29,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Other
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
@@ -93,6 +94,9 @@ let g:easytags_suppress_ctags_warning = 1
 " ----- airblade/vim-gitgutter -----
 " In vim-airline, only display hunks if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
+
+" ----- ntpeters/vim-better-whitespace -----
+autocmd BufWritePre <buffer> StripWhitespace
 
 """ Regular stuff
 set shell=bash
