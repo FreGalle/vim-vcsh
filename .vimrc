@@ -117,6 +117,9 @@ silent! colorscheme Tomorrow-Night
 " See vim.wikia.com on Indenting source code - automatic indentation
 filetype plugin indent on
 
+" Add extended matchit behaviour
+runtime macros/matchit.vim
+
 " Indicate the line the cursor is at
 set cursorline
 
