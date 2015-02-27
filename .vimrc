@@ -31,6 +31,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 Plug 'digitaltoad/vim-jade'
 " Other
+Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
@@ -83,6 +84,9 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
+" ----- airblade/vim-gitgutter -----
+" In vim-airline, only display hunks if the diff is non-zero
+let g:airline#extensions#hunks#non_zero_only = 1
 
 """ Regular stuff
 set shell=bash
@@ -166,6 +170,10 @@ highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white
 highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
 highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
 highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+
+" ----- airblade/vim-gitgutter -----
+" Required after having changed the colorscheme
+hi clear SignColumn
 
 " Split navigation
 map <Tab> <C-w>w
