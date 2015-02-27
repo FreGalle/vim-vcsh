@@ -51,6 +51,7 @@ let g:ctrlp_match_window = ',order:ttb,,,'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1
 
+" ----- scrooloose/syntastic -----
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_id_checkers = 0
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
@@ -63,18 +64,22 @@ let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "te
 let g:user_emmet_leader_key='<Leader>e'
 let g:user_emmet_mode='nv'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,less EmmetInstall
+if has("autocmd")
+  autocmd FileType html,css,less EmmetInstall
+endif
 
 " ----- Raimondi/delimitMate -----
 let delimitMate_expand_space=1
 let delimitMate_expand_cr=1
-augroup delimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-augroup END
+if has("autocmd")
+  augroup delimitMate
+    autocmd!
+    autocmd FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+    autocmd FileType tex let b:delimitMate_quotes = ""
+    autocmd FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+    autocmd FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+  augroup END
+endif
 
 " ----- bling/vim-airline -----
 let g:airline#extensions#tabline#enabled = 1"
@@ -93,13 +98,19 @@ let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
 " ----- airblade/vim-gitgutter -----
+hi clear SignColumn
 " In vim-airline, only display hunks if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
 
 " ----- ntpeters/vim-better-whitespace -----
 autocmd BufWritePre <buffer> StripWhitespace
 
-""" Regular stuff
+" ----- Regular settings -----
+filetype plugin indent on
+runtime macros/matchit.vim  " Extended matchit functionality
+syntax enable
+silent! colorscheme Tomorrow-Night
+
 set shell=bash
 set number
 set title
@@ -109,57 +120,24 @@ set autoread
 set mouse=a
 set scrolloff=3
 set wildignore+=.git
-syntax enable
+set cursorline        " Indicate the cursor is at
+set hidden            " Unsaved buffers no longer complain
+set timeoutlen=1000   " Remove delay when pressing Esc
+set ttimeoutlen=0
+set wildmenu          " Enable the menu when using <wildchar>-completion
+set splitbelow
+set splitright
+set pastetoggle=<F3>  " Toggle paste mode
+set linebreak         " Wrap at word instead of character
+set backspace=2       " Better backspace behaviour
+set colorcolumn=+1    " Delimiter at column 81
+let mapleader=","     " Comma becomes the new leader
 
-silent! colorscheme Tomorrow-Night
-
-" Enable filetype-based indenting rules
-" See vim.wikia.com on Indenting source code - automatic indentation
-filetype plugin indent on
-
-" Add extended matchit behaviour
-runtime macros/matchit.vim
-
-" Indicate the line the cursor is at
-set cursorline
-
-" Unsaved buffers no longer complain
-set hidden
-
-" Set tab behavior
-" This can also be done on a per-filetype basis
-set tabstop=2    " Number of spaces a tab counts for
-set shiftwidth=2 " Number of spaces used for (auto)indent
-set shiftround   " Round indent to multiples of shiftwidth
-set smarttab     " Inserts shiftwidth when tabbing in front of line
-set expandtab    " Always insert spaces instead of tabs
-
-" Allows backspace over indentation, line-end and insert-start
-set backspace=2
-" Searching options
 set hlsearch	 " Highlight matches
 set incsearch	 " Incremental searching
 set ignorecase " Case doesn't matter
 set smartcase	 " Searches are only case-sensitive when containing a case
 
-" Remove delay when pressing Esc
-set timeoutlen=1000
-set ttimeoutlen=0
-
-" Enable the menu when using <wildchar>-completion
-set wildmenu
-
-" Open split windows below and to the right
-set splitbelow
-set splitright
-
-" Toggle paste mode
-set pastetoggle=<F3>
-
-" Wrap at word instead of character
-set linebreak
-
-" backup to ~/.tmp
 set backup
 set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
@@ -168,15 +146,25 @@ set writebackup
 set undodir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set undofile
 
-" Use Groovy filetype for gradle files
-au BufNewFile,BufRead *.gradle set filetype=groovy
+" Set tab behavior, this can also be done on a per-filetype basis
+set tabstop=2    " Number of spaces a tab counts for
+set shiftwidth=2 " Number of spaces used for (auto)indent
+set shiftround   " Round indent to multiples of shiftwidth
+set smarttab     " Inserts shiftwidth when tabbing in front of line
+set expandtab    " Always insert spaces instead of tabs
 
-" Tags always have to be in the top-directory, while vim can be open in
-" the source-directory itself
-" set tags=./tags;tags
+"Nice statusbar
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n\                             " buffer number
+set statusline+=%f\                                 " file name
+set statusline+=%h%m%r%w                            " flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}\]       " filetype
+set statusline+=\[%{&encoding},                     " encoding
+set statusline+=%{&fileformat}\]\                   " file format
+set statusline+=%=                                  " right align
+set statusline+=%-10.(%l,%c%V%)\ %<%LL\ -\ %P       " offset
 
-" Delimiter at 81
-set colorcolumn=+1
 highlight colorcolumn ctermfg=red
 
 " Nice colors for highlighting
@@ -185,10 +173,7 @@ highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
 highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
 highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
 
-" ----- airblade/vim-gitgutter -----
-" Required after having changed the colorscheme
-hi clear SignColumn
-
+" ----- Key remappings -----
 " Split navigation
 map <Tab> <C-w>w
 " Note that delimitMate shadows this in certain cases
@@ -199,9 +184,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" Make comma the new leader
-let mapleader=","
-" And let space function as colon
+" Let space function as colon
 map <Space> :
 
 " Prevents from going into Ex-mode accidentally
@@ -225,39 +208,23 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-" Fugitive mappings
+" Make < and > keep the selection
+vnoremap < <gv
+vnoremap > >gv
+
+" Use sudow when trying to save a file without sufficient privileges
+cnoremap sudow w !sudo tee % >/dev/null
+
+" ----- tpope/vim-fugitive -----
 nnoremap <Leader>gc :Gcommit -v -q<CR>
 nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
 " ----- jistr/vim-nerdtree-tabs -----
-" Open/close NERDTree with ,t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 
 " ----- majutsushi/tagbar -----
 nmap <silent> <leader>b :TagbarToggle<CR>
-
-" Make < and > keep the selection
-vnoremap < <gv
-vnoremap > >gv
-
-" Disable location remembering for git commits
-autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
-
-" Use sudow when trying to save a file without sufficient privileges
-cnoremap sudow w !sudo tee % >/dev/null
-
-"Nice statusbar
-set laststatus=2
-set statusline=
-set statusline+=%-3.3n\                             " buffer number
-set statusline+=%f\                                 " file name
-set statusline+=%h%m%r%w                            " flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}\]       " filetype
-set statusline+=\[%{&encoding},                     " encoding
-set statusline+=%{&fileformat}\]\                   " file format
-set statusline+=%=                                  " right align
-set statusline+=%-10.(%l,%c%V%)\ %<%LL\ -\ %P       " offset
 
 if has("autocmd")
     " When editing a file, always jump to the last known cursor position.
@@ -270,5 +237,8 @@ if has("autocmd")
 
     " At the time of writing vim sees .md as Modula-2
     autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+    " Use Groovy filetype for gradle files
+    autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 
 endif " has autocmd
