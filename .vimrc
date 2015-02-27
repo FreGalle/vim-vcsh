@@ -65,8 +65,16 @@ let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "te
 let g:user_emmet_leader_key='<Leader>e'
 let g:user_emmet_mode='nv'
 
+" ----- Raimondi/delimitMate -----
 let delimitMate_expand_space=1
 let delimitMate_expand_cr=1
+augroup delimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
 
 " ----- bling/vim-airline -----
 let g:airline#extensions#tabline#enabled = 1"
