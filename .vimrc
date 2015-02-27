@@ -61,8 +61,11 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "tex"] }
 
+" ----- mattn/emmet-vim -----
 let g:user_emmet_leader_key='<Leader>e'
 let g:user_emmet_mode='nv'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,less EmmetInstall
 
 " ----- Raimondi/delimitMate -----
 let delimitMate_expand_space=1
