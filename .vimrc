@@ -18,6 +18,12 @@ Plug 'Raimondi/delimitMate' " Load before vim-endwise
 Plug 'tpope/vim-endwise'
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-repeat'
+
+" Display and generate tags
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
+
 " Language plugins
 Plug 'pangloss/vim-javascript'
 Plug 'vim-ruby/vim-ruby'
@@ -66,6 +72,14 @@ let g:airline_powerline_fonts = 1
 
 " ----- jistr/vim-nerdtree-tabs -----
 let g:nerdtree_tabs_open_on_console_startup = 0
+
+" ----- xolox/vim-easytags -----
+set tags=./tags;,~/.vimtags
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
 
 
 """ Regular stuff
@@ -195,6 +209,9 @@ nnoremap <Leader>gs :Gstatus<CR>
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree with ,t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+
+" ----- majutsushi/tagbar -----
+nmap <silent> <leader>b :TagbarToggle<CR>
 
 " Make < and > keep the selection
 vnoremap < <gv
