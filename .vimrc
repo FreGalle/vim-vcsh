@@ -27,6 +27,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Other
+Plug 'edkolev/tmuxline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
