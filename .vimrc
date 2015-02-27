@@ -45,7 +45,7 @@ let g:bufExplorerShowDirectories = 0
 let g:bufExplorerSplitBelow = 1
 let g:bufExplorerSplitRight = 1
 " Set this to 0 when hidden is set
-let g:bufExplorerFindActive = 0 
+let g:bufExplorerFindActive = 0
 
 " ----- kien/ctrlp.vim -----
 let g:ctrlp_map = '<Leader>f'
@@ -59,7 +59,7 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_args = '-R'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "tex"] } 
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "tex"] }
 
 let g:user_emmet_leader_key='<Leader>e'
 let g:user_emmet_mode='nv'
@@ -129,7 +129,7 @@ set shiftwidth=2 " Number of spaces used for (auto)indent
 set shiftround   " Round indent to multiples of shiftwidth
 set smarttab     " Inserts shiftwidth when tabbing in front of line
 set expandtab    " Always insert spaces instead of tabs
-  
+
 " Allows backspace over indentation, line-end and insert-start
 set backspace=2
 " Searching options
@@ -155,13 +155,13 @@ set pastetoggle=<F3>
 " Wrap at word instead of character
 set linebreak
 
-" backup to ~/.tmp 
-set backup 
-set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
-set backupskip=/tmp/*,/private/tmp/* 
-set directory=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+" backup to ~/.tmp
+set backup
+set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
-set undodir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set undodir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set undofile
 
 " Use Groovy filetype for gradle files
@@ -266,5 +266,5 @@ if has("autocmd")
 
     " At the time of writing vim sees .md as Modula-2
     autocmd BufRead,BufNewFile *.md set filetype=markdown
-    
+
 endif " has autocmd
