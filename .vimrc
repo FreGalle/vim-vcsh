@@ -1,36 +1,29 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'vim-scripts/bufexplorer.zip'
-Plugin 'kien/ctrlp.vim'
-" More actively maintained then official solarized
-Plugin 'thomwiggers/vim-colors-solarized'
-Plugin 'tpope/vim-surround'
+"Plugin 'vim-scripts/bufexplorer.zip'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'tpope/vim-surround'
 "Plugin 'tpope/vim-rails'
-Plugin 'scrooloose/syntastic'
-Plugin 'mattn/emmet-vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'vim-ruby/vim-ruby'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'mattn/emmet-vim'
+"Bundle 'pangloss/vim-javascript'
+"Bundle 'vim-ruby/vim-ruby'
 " Should load before vim-endwise
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-endwise'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sickill/vim-pasta'
-Bundle 'tpope/vim-repeat'
-Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'Raimondi/delimitMate'
+"Bundle 'tpope/vim-endwise'
+"Bundle 'digitaltoad/vim-jade'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'sickill/vim-pasta'
+"Bundle 'tpope/vim-repeat'
+"Bundle 'christoomey/vim-tmux-navigator'
+" More actively maintained then official solarized
+" Plugin 'thomwiggers/vim-colors-solarized'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 
-
-call vundle#end()
+call plug#end()
 
 let g:bufExplorerShowRelativePath = 1
 let g:bufExplorerShowDirectories = 0
