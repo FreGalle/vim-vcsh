@@ -1,27 +1,31 @@
 set nocompatible
+
 filetype off
 
 call plug#begin('~/.vim/plugged')
 
-"Plugin 'vim-scripts/bufexplorer.zip'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-rails'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'mattn/emmet-vim'
-"Bundle 'pangloss/vim-javascript'
-"Bundle 'vim-ruby/vim-ruby'
-" Should load before vim-endwise
-"Bundle 'Raimondi/delimitMate'
-"Bundle 'tpope/vim-endwise'
-"Bundle 'digitaltoad/vim-jade'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'sickill/vim-pasta'
-"Bundle 'tpope/vim-repeat'
-"Bundle 'christoomey/vim-tmux-navigator'
-" More actively maintained then official solarized
-" Plugin 'thomwiggers/vim-colors-solarized'
+" General plugins
+Plug 'vim-scripts/bufexplorer.zip'
+Plug 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate' " Load before vim-endwise
+Plug 'tpope/vim-endwise'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-repeat'
+" Language plugins
+Plug 'pangloss/vim-javascript'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'mattn/emmet-vim'
+Plug 'digitaltoad/vim-jade'
+" Other
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
+" More actively maintained then official solarized
+Plug 'thomwiggers/vim-colors-solarized'
 
 call plug#end()
 
