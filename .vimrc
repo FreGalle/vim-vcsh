@@ -25,11 +25,9 @@ Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 
 " Language plugins
-Plug 'pangloss/vim-javascript'
-Plug 'vim-ruby/vim-ruby'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
-Plug 'digitaltoad/vim-jade'
 " Other
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
