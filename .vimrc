@@ -91,10 +91,11 @@ let g:airline_powerline_fonts = 1
 let g:nerdtree_tabs_open_on_console_startup = 0
 
 " ----- xolox/vim-easytags -----
-set tags=./tags;,~/.vimtags
+set tags=./\.tags;/
+let g:easytags_file = '~/.vim/tags'
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
+let g:easytags_dynamic_files = 1
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
