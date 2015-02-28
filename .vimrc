@@ -186,6 +186,10 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Center when going to the next or previous match
+map N Nzz
+map n nzz
+
 " Let space function as colon
 map <Space> :
 
