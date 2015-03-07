@@ -28,6 +28,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Other
 Plug 'henrik/vim-indexed-search'
+Plug 'sjl/gundo.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
@@ -237,6 +238,9 @@ nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 
 " ----- majutsushi/tagbar -----
 nmap <silent> <leader>b :TagbarToggle<CR>
+
+" ----- sjl/gundo.vim -----
+nnoremap <Leader>u :GundoToggle<CR>
 
 if has("autocmd")
     " When editing a file, always jump to the last known cursor position.
