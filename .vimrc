@@ -27,6 +27,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Other
+Plug 'henrik/vim-indexed-search'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
@@ -107,6 +108,15 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " ----- ntpeters/vim-better-whitespace -----
 autocmd BufWritePre <buffer> StripWhitespace
 
+" ----- henrik/vim-indexed-search -----
+if has("autocmd")
+  augroup indexedSearch
+    " Center when going to next or previous match
+    autocmd VimEnter * nmap n <Plug>(indexed-search-n)zz
+    autocmd VimEnter * nmap N <Plug>(indexed-search-N)zz
+  augroup END
+endif
+
 " ----- Regular settings -----
 filetype plugin indent on
 runtime macros/matchit.vim  " Extended matchit functionality
@@ -185,10 +195,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
-" Center when going to the next or previous match
-map N Nzz
-map n nzz
 
 " Let space function as colon
 map <Space> :
