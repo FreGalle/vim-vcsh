@@ -108,6 +108,9 @@ let g:easytags_suppress_ctags_warning = 1
 hi clear SignColumn
 " In vim-airline, only display hunks if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:gitgutter_map_keys = 0
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 " ----- ntpeters/vim-better-whitespace -----
 autocmd BufWritePre <buffer> StripWhitespace
