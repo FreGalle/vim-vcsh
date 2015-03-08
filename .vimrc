@@ -28,6 +28,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Other
 Plug 'henrik/vim-indexed-search'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'mileszs/ack.vim'
@@ -123,6 +124,11 @@ if has("autocmd")
     autocmd VimEnter * nmap N <Plug>(indexed-search-N)zz
   augroup END
 endif
+
+" ----- junegunn/rainbow_parentheses.vim -----
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']']]
+
 
 " ----- Regular settings -----
 filetype plugin indent on
