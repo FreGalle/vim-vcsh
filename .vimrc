@@ -239,6 +239,7 @@ nnoremap <Leader>gs :Gstatus<CR>
 
 " ----- jistr/vim-nerdtree-tabs -----
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+autocmd FileType nerdtree cnoreabbrev <silent> <buffer> bd :NERDTreeTabsToggle<CR>
 
 " ----- majutsushi/tagbar -----
 nmap <silent> <leader>b :TagbarToggle<CR>
