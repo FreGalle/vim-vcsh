@@ -3,7 +3,6 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " General plugins
-Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
@@ -28,6 +27,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Other
 Plug 'henrik/vim-indexed-search'
+Plug 'techlivezheng/vim-plugin-minibufexpl'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tomtom/tcomment_vim'
@@ -43,14 +43,6 @@ Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 Plug 'thomwiggers/vim-colors-solarized'
 
 call plug#end()
-
-" ----- vim-scripts/bufexplorer.zip -----
-let g:bufExplorerShowRelativePath = 1
-let g:bufExplorerShowDirectories = 0
-let g:bufExplorerSplitBelow = 1
-let g:bufExplorerSplitRight = 1
-" Set this to 0 when hidden is set
-let g:bufExplorerFindActive = 0
 
 " ----- kien/ctrlp.vim -----
 let g:ctrlp_map = '<Leader>f'
@@ -128,7 +120,6 @@ endif
 " ----- junegunn/rainbow_parentheses.vim -----
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']']]
-
 
 " ----- Regular settings -----
 filetype plugin indent on
@@ -253,6 +244,13 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 
 " ----- sjl/gundo.vim -----
 nnoremap <Leader>u :GundoToggle<CR>
+
+" ----- techlivezheng/vim-plugin-minibufexpl -----
+nnoremap <Leader>be :MBEOpen<cr>
+nnoremap <Leader>bc :MBEClose<cr>
+let g:miniBufExplAutoStart = 0
+let g:miniBufExplBRSplit = 0
+let g:miniBufExplUseSingleClick = 1
 
 if has("autocmd")
     " When editing a file, always jump to the last known cursor position.
