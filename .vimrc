@@ -137,7 +137,7 @@ set ruler
 set autoread
 set mouse=a
 set scrolloff=3
-set wildignore+=.git
+set wildignore+=.git,.keep
 set cursorline        " Indicate the cursor is at
 set hidden            " Unsaved buffers no longer complain
 set timeoutlen=1000   " Remove delay when pressing Esc
