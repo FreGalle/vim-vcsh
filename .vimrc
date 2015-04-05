@@ -57,6 +57,7 @@ let g:syntastic_ruby_rubocop_args = '-R'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "tex"] }
+let g:syntastic_check_on_open = 1
 
 " ----- mattn/emmet-vim -----
 let g:user_emmet_leader_key='<Leader>e'
