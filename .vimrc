@@ -64,7 +64,7 @@ let g:user_emmet_leader_key='<Leader>e'
 let g:user_emmet_mode='nv'
 let g:user_emmet_install_global = 0
 if has("autocmd")
-  autocmd FileType html,css,less EmmetInstall
+  autocmd FileType html,css,less,scss,eruby EmmetInstall
 endif
 
 " ----- Raimondi/delimitMate -----
