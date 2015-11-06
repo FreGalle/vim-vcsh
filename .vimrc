@@ -25,10 +25,16 @@ Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
+Plug 'pbrisbin/vim-syntax-shakespeare'
 " Other
-Plug 'henrik/vim-indexed-search'
+Plug 'rking/ag.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
 Plug 'techlivezheng/vim-plugin-minibufexpl'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'henrik/vim-indexed-search'
 Plug 'sjl/gundo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'mileszs/ack.vim'
@@ -40,14 +46,16 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 " More actively maintained then official solarized
 Plug 'thomwiggers/vim-colors-solarized'
+Plug 'sjl/badwolf'
 
 call plug#end()
 
 " ----- kien/ctrlp.vim -----
 let g:ctrlp_map = '<Leader>f'
-let g:ctrlp_match_window = ',order:ttb,,,'
+let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1
+"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " ----- scrooloose/syntastic -----
 let g:syntastic_aggregate_errors = 1
@@ -56,7 +64,7 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_args = '-R'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java", "tex"] }
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["haskell", "java", "tex"] }
 let g:syntastic_check_on_open = 1
 
 " ----- mattn/emmet-vim -----
@@ -127,7 +135,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']']]
 filetype plugin indent on
 runtime macros/matchit.vim  " Extended matchit functionality
 syntax enable
-silent! colorscheme Tomorrow-Night
+silent! colorscheme badwolf
 
 set shell=bash
 set number
@@ -148,7 +156,9 @@ set splitright
 set pastetoggle=<F3>  " Toggle paste mode
 set linebreak         " Wrap at word instead of character
 set backspace=2       " Better backspace behaviour
+set textwidth=80
 set colorcolumn=+1    " Delimiter at column 81
+set lazyredraw        " redraw only when we need to
 let mapleader=","     " Comma becomes the new leader
 
 set hlsearch	 " Highlight matches
@@ -182,6 +192,9 @@ set statusline+=\[%{&encoding},                     " encoding
 set statusline+=%{&fileformat}\]\                   " file format
 set statusline+=%=                                  " right align
 set statusline+=%-10.(%l,%c%V%)\ %<%LL\ -\ %P       " offset
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 highlight colorcolumn ctermfg=red
 
@@ -230,8 +243,14 @@ noremap gk k
 vnoremap < <gv
 vnoremap > >gv
 
+" Use . in visual mode
+vnoremap . :norm.<CR>
+
 " Use sudow when trying to save a file without sufficient privileges
 cnoremap sudow w !sudo tee % >/dev/null
+
+" ----- rking/ag.vim -----
+nnoremap <leader>a :Ag<space>
 
 " ----- tpope/vim-fugitive -----
 nnoremap <Leader>gc :Gcommit -v -q<CR>
@@ -255,6 +274,13 @@ let g:miniBufExplAutoStart = 0
 let g:miniBufExplBRSplit = 0
 let g:miniBufExplUseSingleClick = 1
 
+" ----- eagletmt/ghcmod-vim -----
+"autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+" ----- Valloric/YouCompleteMe -----
+let g:ycm_auto_trigger = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 if has("autocmd")
     " When editing a file, always jump to the last known cursor position.
     " Don't do it for commit messages, when the position is invalid or when
@@ -267,7 +293,27 @@ if has("autocmd")
     " At the time of writing vim sees .md as Modula-2
     autocmd BufRead,BufNewFile *.md set filetype=markdown
 
+		" Enable spellchecking for Markdown
+		autocmd FileType markdown setlocal spell
+
+		" Automatically wrap at 80 characters for Markdown
+		autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+		" Automatically wrap at 72 characters and spell check git commit messages
+		autocmd FileType gitcommit setlocal textwidth=72
+		autocmd FileType gitcommit setlocal spell
+
+		" Allow stylesheets to autocomplete hyphenated words
+		autocmd FileType css,scss,sass setlocal iskeyword+=-
+
     " Use Groovy filetype for gradle files
     autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 
 endif " has autocmd
+
+" ----- eagletmt/neco-ghc -----
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+if has("autocmd")
+  au BufRead,BufNewFile *.hs setlocal omnifunc=necoghc#omnifunc
+endif
+
