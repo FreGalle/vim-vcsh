@@ -1,178 +1,313 @@
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " General plugins
-Plug 'scrooloose/syntastic'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
 
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-obsession -----
+""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-obsession'
 
-Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate' " Load before vim-endwise
-Plug 'tpope/vim-endwise'
-Plug 'sickill/vim-pasta'
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-speeddating -----
+""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-speeddating'
+
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-unimpaired -----
+""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-unimpaired'
+
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-repeat -----
+""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-repeat'
 
-" Display and generate tags
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-Plug 'majutsushi/tagbar'
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-surround -----
+""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-surround'
 
-" Language plugins
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-rails'
-Plug 'mattn/emmet-vim'
-Plug 'pbrisbin/vim-syntax-shakespeare'
-" Other
-Plug 'rking/ag.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
-Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
-Plug 'techlivezheng/vim-plugin-minibufexpl'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'henrik/vim-indexed-search'
-Plug 'sjl/gundo.vim'
-Plug 'tomtom/tcomment_vim'
+""""""""""""""""""""""""""""""""""
+" ----- scrooloose/nerdtree -----
+""""""""""""""""""""""""""""""""""
+Plug 'scrooloose/nerdtree' 
+
+let NERDTreeShowBookmarks=1
+let NERDTreeBookmarksFile=expand("$HOME/.vim/bookmarks")
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+""""""""""""""""""""""""""""""""""
+" ----- Xuyuanp/nerdtree-git-plugin -----
+""""""""""""""""""""""""""""""""""
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-vinegar -----
+""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-vinegar'
+
+""""""""""""""""""""""""""""""""""
+" ----- ctrlpvim/ctrlp.vim -----
+""""""""""""""""""""""""""""""""""
+Plug 'ctrlpvim/ctrlp.vim'
+
+let g:ctrlp_cache_dir = $HOME.'/.vim/cache/ctrlp'
+let g:ctrlp_buftag_types = {'go' : '--language-force=go --golang-types=ftv'}
+let g:ctrlp_custom_ignore = '\v[\/]vendor|\.(git|hg|svn)$'
+let g:ctrlp_arg_map = 1
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
+
+let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+"""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-fugitive -----
+"""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'
+
+"""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-rhubarb -----
+"""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-rhubarb'
+
+"""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-abolish -----
+"""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-abolish'
+
+"""""""""""""""""""""""""""""""""""
+" ----- mileszs/ack.vim -----
+"""""""""""""""""""""""""""""""""""
 Plug 'mileszs/ack.vim'
-Plug 'edkolev/tmuxline.vim'
-Plug 'ntpeters/vim-better-whitespace'
+
+let g:ackhighlight = 1
+let g:ack_autofold_results = 1
+let g:ack_mappings = { "o":  "<CR>zz" }
+let g:ack_mappings = { "O":  "<CR>zz<C-W><C-W>:ccl<CR>" }
+let g:ack_mappings = { "go": "<CR>zz<C-W>j" }
+let g:ack_mappings = { "s": "<C-W><CR><C-W>K" }
+let g:ack_mappings = { "S": "<C-W><CR><C-W>K<C-W>b" }
+
+if executable("rg")
+  let g:ackprg = 'rg --vimgrep --no-heading --column'
+  set grepformat^=%f:%l:%c:%m
+endif
+
+""""""""""""""""""""""""""""""""""
+" ----- jiangmiao/auto-pairs -----
+""""""""""""""""""""""""""""""""""
+Plug 'jiangmiao/auto-pairs'
+
+let g:AutoPairsCenterLine = 0
+let g:AutoPairsMultilineClose = 0
+
+""""""""""""""""""""""""""""""""""
+" ----- tpope/vim-commentary -----
+""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-commentary'
+
+""""""""""""""""""""""""""""""""""
+" ----- fatih/vim-go -----
+""""""""""""""""""""""""""""""""""
+Plug 'fatih/vim-go', {'for':'go'}
+
+let g:go_highlight_extra_types = 0
+let g:go_highlight_space_tab_error = 0
+let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_types = 0
+let g:go_highlight_fields = 0
+let g:go_highlight_build_constraints = 0
+let g:go_highlight_generate_tags = 0
+let g:go_highlight_string_spellcheck = 0
+let g:go_highlight_format_strings = 1
+
+let g:go_fmt_command = "goimports"
+let g:go_fmt_experimental = 1
+
+autocmd FileType go nmap <leader>gt :GoDeclsDir<cr>
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+
+""""""""""""""""""""""""""""""""""
+" ----- AndrewRadev/splitjoin.vim -----
+""""""""""""""""""""""""""""""""""
+Plug 'AndrewRadev/splitjoin.vim', {'for':'go'}
+
+""""""""""""""""""""""""""""""""""
+" ----- airblade/vim-gitgutter -----
+""""""""""""""""""""""""""""""""""
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-" More actively maintained then official solarized
-Plug 'thomwiggers/vim-colors-solarized'
+
+""""""""""""""""""""""""""""""""""
+" ----- sjl/badwolf -----
+""""""""""""""""""""""""""""""""""
 Plug 'sjl/badwolf'
+
+""""""""""""""""""""""""""""""""""
+" ----- morhetz/gruvbox -----
+""""""""""""""""""""""""""""""""""
+Plug 'morhetz/gruvbox'
+
+let g:gruvbox_invert_selection=0
+
+""""""""""""""""""""""""""""""""""
+" ----- docker/docker -----
+""""""""""""""""""""""""""""""""""
+Plug 'docker/docker', {'for':'dockerfile', 'rtp':'/contrib/syntax/vim/', 'frozen':1}
+
+""""""""""""""""""""""""""""""""""
+" ----- kshenoy/vim-signature -----
+""""""""""""""""""""""""""""""""""
+Plug 'kshenoy/vim-signature'
+
+""""""""""""""""""""""""""""""""""
+" ----- mihais/vim-mark -----
+""""""""""""""""""""""""""""""""""
+Plug 'mihais/vim-mark'
+
+nmap <Leader>1 <Plug>MarkSearchGroup1Next
+nmap <Leader>2 <Plug>MarkSearchGroup2Next
+nmap <Leader>3 <Plug>MarkSearchGroup3Next
+nmap <Leader>4 <Plug>MarkSearchGroup4Next
+nmap <Leader>5 <Plug>MarkSearchGroup5Next
+nmap <Leader>6 <Plug>MarkSearchGroup6Next
+
+""""""""""""""""""""""""""""""""""
+" ----- mbbill/undotree -----
+""""""""""""""""""""""""""""""""""
+Plug 'mbbill/undotree'
+
+let g:undotree_WindowLayout = 2
+let g:undotree_SetFocusWhenToggle = 1
+
+""""""""""""""""""""""""""""""""""
+" ----- christoomey/vim-tmux-navigator -----
+""""""""""""""""""""""""""""""""""
+Plug 'christoomey/vim-tmux-navigator'
+
+""""""""""""""""""""""""""""""""""
+" ----- edkolev/tmuxline.vim -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'edkolev/tmuxline.vim'
+
+""""""""""""""""""""""""""""""""""
+" ----- vimwiki/vimwiki -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'vimwiki/vimwiki'
+
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/', 'auto_tags': 1}]
+let g:vimwiki_auto_chdir = 1
+
+au BufRead,BufNewFile *.wiki set filetype=vimwiki
+au Filetype vimwiki let b:delimitMate_expand_space = 0
+
+au Filetype vimwiki map  <buffer> <Leader>x <Plug>VimwikiToggleListItem
+au Filetype vimwiki nmap <buffer> <Leader>j <Plug>VimwikiDiaryNextDay
+au Filetype vimwiki nmap <buffer> <Leader>k <Plug>VimwikiDiaryPrevDay
+
+command! -count=1 VimwikiMakeTomorrowDiaryNote call vimwiki#diary#make_note(v:count1, 0, strftime(VimwikiGet('diary_link_fmt', v:count1 - 1), localtime() + 60*60*24))
+
+""""""""""""""""""""""""""""""""""
+" ----- junegunn/vim-easy-align -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'junegunn/vim-easy-align'
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 call plug#end()
 
-" ----- kien/ctrlp.vim -----
-let g:ctrlp_map = '<Leader>f'
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_show_hidden = 1
-"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+""""""""""""""""""""""""""""""""""
+" ----- sheerun/vim-polyglot -----
+""""""""""""""""""""""""""""""""""
 
-" ----- scrooloose/syntastic -----
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_id_checkers = 0
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_ruby_rubocop_args = '-R'
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '!'
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["haskell", "java", "tex"] }
-let g:syntastic_check_on_open = 1
+Plug 'sheerun/vim-polyglot'
 
-" ----- mattn/emmet-vim -----
-let g:user_emmet_leader_key='<Leader>e'
-let g:user_emmet_mode='nv'
-let g:user_emmet_install_global = 0
-if has("autocmd")
-  autocmd FileType html,css,less,scss,eruby EmmetInstall
-endif
+"
+" ----- General settings -----
+"
 
-" ----- Raimondi/delimitMate -----
-let delimitMate_expand_space=1
-let delimitMate_expand_cr=1
-if has("autocmd")
-  augroup delimitMate
-    autocmd!
-    autocmd FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-    autocmd FileType tex let b:delimitMate_quotes = ""
-    autocmd FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-    autocmd FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-  augroup END
-endif
-
-" ----- bling/vim-airline -----
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline_detect_paste=1
-let g:airline_powerline_fonts = 1
-
-" ----- jistr/vim-nerdtree-tabs -----
-let g:nerdtree_tabs_open_on_console_startup = 0
-
-" ----- xolox/vim-easytags -----
-set tags=./\.tags;/
-let g:easytags_file = '~/.vim/tags'
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 1
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
-
-" ----- airblade/vim-gitgutter -----
-hi clear SignColumn
-" In vim-airline, only display hunks if the diff is non-zero
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:gitgutter_map_keys = 0
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-
-" ----- ntpeters/vim-better-whitespace -----
-autocmd BufWritePre <buffer> StripWhitespace
-
-" ----- henrik/vim-indexed-search -----
-if has("autocmd")
-  augroup indexedSearch
-    " Center when going to next or previous match
-    autocmd VimEnter * nmap n <Plug>(indexed-search-n)zz
-    autocmd VimEnter * nmap N <Plug>(indexed-search-N)zz
-  augroup END
-endif
-
-" ----- junegunn/rainbow_parentheses.vim -----
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']']]
-
-" ----- Regular settings -----
 filetype plugin indent on
-runtime macros/matchit.vim  " Extended matchit functionality
 syntax enable
-silent! colorscheme badwolf
 
-set shell=bash
+" set termguicolors
+set background=dark
+
+colorscheme gruvbox
+
+silent! set encoding=utf-8
+set noerrorbells
 set number
-set title
-set showcmd
 set ruler
-set autoread
+set showcmd
+set noshowmode
+set hidden
+
 set mouse=a
-set scrolloff=3
-set wildignore+=.git,.keep
-set cursorline        " Indicate the cursor is at
-set hidden            " Unsaved buffers no longer complain
-set timeoutlen=1000   " Remove delay when pressing Esc
-set ttimeoutlen=0
-set wildmenu          " Enable the menu when using <wildchar>-completion
-set splitbelow
+
 set splitright
-set pastetoggle=<F3>  " Toggle paste mode
-set linebreak         " Wrap at word instead of character
-set backspace=2       " Better backspace behaviour
-set textwidth=80
-set colorcolumn=+1    " Delimiter at column 81
-set lazyredraw        " redraw only when we need to
-let mapleader=","     " Comma becomes the new leader
+set splitbelow
 
-set hlsearch	 " Highlight matches
-set incsearch	 " Incremental searching
-set ignorecase " Case doesn't matter
-set smartcase	 " Searches are only case-sensitive when containing a case
+set pastetoggle=<F3>
 
-set backup
-set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
-set undodir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" set relativenumber " seems to slow down neovim
+
+set wildmenu
+set wildmode=full
+
+set autoread
+
+set updatetime=250
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+set nobackup
+set nowritebackup
+
+" store swap files in case something goes wrong
+if isdirectory($HOME . '/.vim/swap') == 0
+  call mkdir($HOME.'/.vim/swap', 'p')
+endif
+set directory=~/.vim/swap//
+set directory+=~/tmp//
+set directory+=.
+
+" undofile - This allows you to use undos after exiting and restarting
+if isdirectory($HOME . '/.vim/undo') == 0
+  call mkdir($HOME.'/.vim/undo', 'p')
+endif
+set undodir=~/.vim/undo//
 set undofile
+
+" viminfo stores the the state of your previous editing session
+if exists('+shada')
+  set shada+=n~/.nvim/shada
+else
+  set viminfo+=n~/.vim/viminfo
+endif
+
+set showmatch
+
+set autoindent
+set backspace=indent,eol,start
 
 " Set tab behavior, this can also be done on a per-filetype basis
 set tabstop=2    " Number of spaces a tab counts for
@@ -181,63 +316,80 @@ set shiftround   " Round indent to multiples of shiftwidth
 set smarttab     " Inserts shiftwidth when tabbing in front of line
 set expandtab    " Always insert spaces instead of tabs
 
-"Nice statusbar
-set laststatus=2
-set statusline=
-set statusline+=%-3.3n\                             " buffer number
-set statusline+=%f\                                 " file name
-set statusline+=%h%m%r%w                            " flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}\]       " filetype
-set statusline+=\[%{&encoding},                     " encoding
-set statusline+=%{&fileformat}\]\                   " file format
-set statusline+=%=                                  " right align
-set statusline+=%-10.(%l,%c%V%)\ %<%LL\ -\ %P       " offset
+set nrformats-=octal
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+" Time out on key codes but not mappings.
+set notimeout
+set ttimeout
+set ttimeoutlen=100
 
-highlight colorcolumn ctermfg=red
+set hlsearch    " Highlight matches
+set incsearch   " Incremental searching
+set ignorecase  " Case doesn't matter
+set smartcase   " Searches are only case-sensitive when containing a case
 
-" Nice colors for highlighting
-highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white
-highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
-highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
-highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+set scrolloff=1
+set sidescrolloff=5
 
-" ----- Key remappings -----
-" Split navigation
-map <Tab> <C-w>w
-" Note that delimitMate shadows this in certain cases
-map <S-Tab> <C-w>W
+set linebreak
+set textwidth=79
+set formatoptions+=qj1lncr
 
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
+
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=longest,menuone
+
+set showbreak=›\ 
+set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
+
+set tags=./.tags,./tags,.tags,tags
+
+" open help vertically
+command! -nargs=* -complete=help Help vertical belowright help <args>
+
+function! Tmpwatch(path, days)
+    let l:path = expand(a:path)
+    if isdirectory(l:path)
+        for file in split(globpath(l:path, "*"), "\n")
+            if localtime() > getftime(file) + 86400 * a:days && delete(file) != 0
+                echo "Tmpwatch(): Error deleting '" . file . "'"
+            endif
+        endfor
+    else
+        echo "Tmpwatch(): Directory '" . l:path . "' not found"
+    endif
+endfunction
+
+" remove undo files which have not been modified for 31 days
+call Tmpwatch(&undodir, 31)
+
+"
+" "----- Key mappings -----
+"
+
+" Comma becomes the new leader
+let g:mapleader=","
 
 " Let space function as colon
+map <Space> :
 map <Space> :
 
 " Prevents from going into Ex-mode accidentally
 nnoremap Q <Nop>
 
-" Make & trigger :&& so it preserves flags when using & to repeat a subst
-nnoremap & :&&<CR>
-xnoremap & :&&<CR>
-
 " Exit insert-mode easily
 inoremap jk <ESC>
 
-" Two ways to remove search highlights
-command C let @/=""
-nnoremap <silent> <Leader>/ :noh<CR>
-nnoremap <silent> <Leader>// :C<CR>
-
 " When wrapping is on, move cursor by displayed lines instead of file lines
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Make < and > keep the selection
 vnoremap < <gv
@@ -247,73 +399,80 @@ vnoremap > >gv
 vnoremap . :norm.<CR>
 
 " Use sudow when trying to save a file without sufficient privileges
-cnoremap sudow w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee > /dev/null %
 
-" ----- rking/ag.vim -----
-nnoremap <leader>a :Ag<space>
+" Move between splits more easily
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+tnoremap <C-h> <C-\><C-N><C-W>h
+tnoremap <C-j> <C-\><C-N><C-W>j
+tnoremap <C-k> <C-\><C-N><C-W>k
+tnoremap <C-l> <C-\><C-N><C-W>l
 
-" ----- tpope/vim-fugitive -----
-nnoremap <Leader>gc :Gcommit -v -q<CR>
-nnoremap <Leader>gt :Gcommit -v -q %:p<CR>
-nnoremap <Leader>gs :Gstatus<CR>
+" Clear the highlighting of :set hlsearch
+nnoremap <esc><esc> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
-" ----- jistr/vim-nerdtree-tabs -----
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-autocmd FileType nerdtree cnoreabbrev <silent> <buffer> bd :NERDTreeTabsToggle<CR>
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
 
-" ----- majutsushi/tagbar -----
-nmap <silent> <leader>b :TagbarToggle<CR>
+" Command to create the '.tags' file
+com! MakeTags !ctags -R -f '.tags' .
 
-" ----- sjl/gundo.vim -----
-nnoremap <Leader>u :GundoToggle<CR>
+"
+" ----- File Type Settings -----
+"
 
-" ----- techlivezheng/vim-plugin-minibufexpl -----
-nnoremap <Leader>be :MBEOpen<cr>
-nnoremap <Leader>bc :MBEClose<cr>
-let g:miniBufExplAutoStart = 0
-let g:miniBufExplBRSplit = 0
-let g:miniBufExplUseSingleClick = 1
+au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
+au BufNewFile,BufRead *.json setlocal ft=json expandtab ts=2 sw=2 tw=0
+au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.md setlocal expandtab ts=4 sw=4 sts=4 tw=0
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
-" ----- eagletmt/ghcmod-vim -----
-"autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 
-" ----- Valloric/YouCompleteMe -----
-let g:ycm_auto_trigger = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
+au FileType gitcommit setlocal nolist spell
+au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
+au FileType vim setlocal keywordprg=:help
+au FileType sh setlocal noet ts=4 sw=4
 
-if has("autocmd")
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it for commit messages, when the position is invalid or when
-    " inside an event handler (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-                \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-                \   execute "normal! g`\"" |
-                \ endif
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
 
-    " At the time of writing vim sees .md as Modula-2
-    autocmd BufRead,BufNewFile *.md set filetype=markdown
+" TODO move to different section
 
-		" Enable spellchecking for Markdown
-		autocmd FileType markdown setlocal spell
+autocmd WinEnter * stopinsert
 
-		" Automatically wrap at 80 characters for Markdown
-		autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+let g:netrw_banner=0
+let g:netrw_browse_split=4   " open in prior window
+let g:netrw_altv=1           " open splits to the right
+let g:netrw_liststyle=3      " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-		" Automatically wrap at 72 characters and spell check git commit messages
-		autocmd FileType gitcommit setlocal textwidth=72
-		autocmd FileType gitcommit setlocal spell
-
-		" Allow stylesheets to autocomplete hyphenated words
-		autocmd FileType css,scss,sass setlocal iskeyword+=-
-
-    " Use Groovy filetype for gradle files
-    autocmd BufRead,BufNewFile *.gradle set filetype=groovy
-
-endif " has autocmd
-
-" ----- eagletmt/neco-ghc -----
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
-if has("autocmd")
-  au BufRead,BufNewFile *.hs setlocal omnifunc=necoghc#omnifunc
-endif
-
+"
+" ----- Plugin Settings -----
+"
+let g:terminal_color_0  = '#2e3436'
+let g:terminal_color_1  = '#cc0000'
+let g:terminal_color_2  = '#4e9a06'
+let g:terminal_color_3  = '#c4a000'
+let g:terminal_color_4  = '#3465a4'
+let g:terminal_color_5  = '#75507b'
+let g:terminal_color_6  = '#0b939b'
+let g:terminal_color_7  = '#d3d7cf'
+let g:terminal_color_8  = '#555753'
+let g:terminal_color_9  = '#ef2929'
+let g:terminal_color_10 = '#8ae234'
+let g:terminal_color_11 = '#fce94f'
+let g:terminal_color_12 = '#729fcf'
+let g:terminal_color_13 = '#ad7fa8'
+let g:terminal_color_14 = '#00f5e9'
+let g:terminal_color_15 = '#eeeeec'
