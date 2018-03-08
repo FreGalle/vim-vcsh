@@ -34,7 +34,7 @@ Plug 'tpope/vim-surround'
 """"""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdtree' 
 
-let NERDTreeShowBookmarks=1
+let NERDTreeShowBookmarks=0
 let NERDTreeBookmarksFile=expand("$HOME/.vim/bookmarks")
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
@@ -87,7 +87,7 @@ Plug 'tpope/vim-abolish'
 Plug 'mileszs/ack.vim'
 
 let g:ackhighlight = 1
-let g:ack_autofold_results = 1
+let g:ack_autofold_results = 0
 let g:ack_mappings = { "o":  "<CR>zz" }
 let g:ack_mappings = { "O":  "<CR>zz<C-W><C-W>:ccl<CR>" }
 let g:ack_mappings = { "go": "<CR>zz<C-W>j" }
@@ -231,13 +231,27 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-call plug#end()
+""""""""""""""""""""""""""""""""""
+" ----- machakann/vim-highlightedyank -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'machakann/vim-highlightedyank'
+
+let g:highlightedyank_highlight_duration = 400
+
+""""""""""""""""""""""""""""""""""
+" ----- junegunn/vim-easy-align -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'junegunn/goyo.vim'
 
 """"""""""""""""""""""""""""""""""
 " ----- sheerun/vim-polyglot -----
 """"""""""""""""""""""""""""""""""
 
 Plug 'sheerun/vim-polyglot'
+
+call plug#end()
 
 "
 " ----- General settings -----
@@ -299,7 +313,7 @@ set undofile
 
 " viminfo stores the the state of your previous editing session
 if exists('+shada')
-  set shada+=n~/.nvim/shada
+  set shada+=n~/.vim/shada
 else
   set viminfo+=n~/.vim/viminfo
 endif
@@ -380,7 +394,7 @@ map <Space> :
 nnoremap Q <Nop>
 
 " Exit insert-mode easily
-inoremap jk <ESC>
+inoremap jj <ESC>
 
 " When wrapping is on, move cursor by displayed lines instead of file lines
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -436,6 +450,7 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 
 au FileType gitcommit setlocal nolist spell
+au FileType gitconfig setlocal noet ts=4 sw=4
 au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 au FileType vim setlocal keywordprg=:help
 au FileType sh setlocal noet ts=4 sw=4
