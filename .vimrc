@@ -218,8 +218,6 @@ au Filetype vimwiki map  <buffer> <Leader>x <Plug>VimwikiToggleListItem
 au Filetype vimwiki nmap <buffer> <Leader>j <Plug>VimwikiDiaryNextDay
 au Filetype vimwiki nmap <buffer> <Leader>k <Plug>VimwikiDiaryPrevDay
 
-command! -count=1 VimwikiMakeTomorrowDiaryNote call vimwiki#diary#make_note(v:count1, 0, strftime(VimwikiGet('diary_link_fmt', v:count1 - 1), localtime() + 60*60*24))
-
 """"""""""""""""""""""""""""""""""
 " ----- junegunn/vim-easy-align -----
 """"""""""""""""""""""""""""""""""
@@ -267,7 +265,7 @@ colorscheme gruvbox
 
 silent! set encoding=utf-8
 set noerrorbells
-set number
+set nonumber
 set ruler
 set showcmd
 set noshowmode
@@ -337,10 +335,11 @@ set notimeout
 set ttimeout
 set ttimeoutlen=100
 
-set hlsearch    " Highlight matches
-set incsearch   " Incremental searching
-set ignorecase  " Case doesn't matter
-set smartcase   " Searches are only case-sensitive when containing a case
+set hlsearch           " Highlight matches
+set incsearch          " Incremental searching
+set ignorecase         " Case doesn't matter
+set smartcase          " Searches are only case-sensitive when containing a case
+set inccommand=nosplit " Incremental in-place replace
 
 set scrolloff=1
 set sidescrolloff=5
@@ -385,6 +384,14 @@ call Tmpwatch(&undodir, 31)
 
 " Comma becomes the new leader
 let g:mapleader=","
+
+" Turn the word under the cursor into a UTC-timestamp
+"
+" 1. delete inner word into 'z' register
+" 2. ??? 'norm i'
+" 3. Execute a system command to transform the contents of the z-register to
+"    a UTC timestamp.
+nmap <leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
 
 " Let space function as colon
 map <Space> :
@@ -455,6 +462,8 @@ au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 au FileType vim setlocal keywordprg=:help
 au FileType sh setlocal noet ts=4 sw=4
 
+au BufWritePre *.sql :%s/\s\+$//e
+
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
@@ -464,6 +473,7 @@ set wildignore+=*.DS_Store                       " OSX bullshit
 " TODO move to different section
 
 autocmd WinEnter * stopinsert
+autocmd VimResized * wincmd =
 
 let g:netrw_banner=0
 let g:netrw_browse_split=4   " open in prior window
