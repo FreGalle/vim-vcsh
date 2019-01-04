@@ -71,6 +71,8 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 """""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 
+noremap <leader>dg :diffget  \|\| diffupdate<C-Left><C-Left><LEFT>
+
 """""""""""""""""""""""""""""""""""
 " ----- tpope/vim-rhubarb -----
 """""""""""""""""""""""""""""""""""
@@ -249,6 +251,9 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'sheerun/vim-polyglot'
 
+let g:polyglot_disabled = ['markdown']
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'go', 'json=javascript', 'sql' ]
+
 call plug#end()
 
 "
@@ -272,6 +277,8 @@ set noshowmode
 set hidden
 
 set mouse=a
+
+set nowrap
 
 set splitright
 set splitbelow
@@ -359,6 +366,8 @@ set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
 
 set tags=./.tags,./tags,.tags,tags
 
+set diffopt+=vertical
+
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
 
@@ -391,7 +400,12 @@ let g:mapleader=","
 " 2. ??? 'norm i'
 " 3. Execute a system command to transform the contents of the z-register to
 "    a UTC timestamp.
+
+" Transform the word under the cursor into a UTC-timestamp.
 nmap <leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
+
+" Transform the word under the cursor into a duration (in seconds).
+nmap <leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
 
 " Let space function as colon
 map <Space> :
@@ -454,6 +468,7 @@ au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.md setlocal expandtab ts=4 sw=4 sts=4 tw=0
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
+au BufNewFile,BufRead *.md setlocal filetype=markdown
 au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 
 au FileType gitcommit setlocal nolist spell
