@@ -35,7 +35,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree' 
 
 let NERDTreeShowBookmarks=0
-let NERDTreeBookmarksFile=expand("$HOME/.vim/bookmarks")
+let NERDTreeBookmarksFile=expand("$HOME/.vim/cache/bookmarks")
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -302,25 +302,25 @@ set nobackup
 set nowritebackup
 
 " store swap files in case something goes wrong
-if isdirectory($HOME . '/.vim/swap') == 0
-  call mkdir($HOME.'/.vim/swap', 'p')
+if isdirectory($HOME . '/.vim/cache/swap') == 0
+  call mkdir($HOME.'/.vim/cache/swap', 'p')
 endif
-set directory=~/.vim/swap//
+set directory=~/.vim/cache/swap//
 set directory+=~/tmp//
 set directory+=.
 
 " undofile - This allows you to use undos after exiting and restarting
-if isdirectory($HOME . '/.vim/undo') == 0
-  call mkdir($HOME.'/.vim/undo', 'p')
+if isdirectory($HOME . '/.vim/cache/undo') == 0
+  call mkdir($HOME.'/.vim/cache/undo', 'p')
 endif
-set undodir=~/.vim/undo//
+set undodir=~/.vim/cache/undo//
 set undofile
 
 " viminfo stores the the state of your previous editing session
 if exists('+shada')
-  set shada+=n~/.vim/shada
+  set shada+=n~/.vim/cache/shada
 else
-  set viminfo+=n~/.vim/viminfo
+  set viminfo+=n~/.vim/cache/viminfo
 endif
 
 set showmatch
