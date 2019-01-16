@@ -369,7 +369,7 @@ set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
 
 set tags=./.tags,./tags,.tags,tags
 
-set diffopt+=vertical
+set diffopt+=vertical,indent-heuristic,algorithm:patience
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
