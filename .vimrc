@@ -458,9 +458,6 @@ augroup CursorLine
     au WinLeave * setlocal nocursorline
 augroup END
 
-" Command to create the '.tags' file
-com! MakeTags !ctags -R -f '.tags' .
-
 "
 " ----- File Type Settings -----
 "
