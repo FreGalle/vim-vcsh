@@ -414,7 +414,6 @@ nmap <leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>
 
 " Let space function as colon
 map <Space> :
-map <Space> :
 
 " Prevents from going into Ex-mode accidentally
 nnoremap Q <Nop>
