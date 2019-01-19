@@ -71,7 +71,7 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 """""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 
-noremap <leader>dg :diffget  \|\| diffupdate<C-Left><C-Left><LEFT>
+nnoremap <leader>dg :diffget  \|\| diffupdate<C-Left><C-Left><LEFT>
 
 """""""""""""""""""""""""""""""""""
 " ----- tpope/vim-rhubarb -----
@@ -407,10 +407,10 @@ let g:mapleader=","
 "    a UTC timestamp.
 
 " Transform the word under the cursor into a UTC-timestamp.
-nmap <leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
+noremap <silent> <leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
 
 " Transform the word under the cursor into a duration (in seconds).
-nmap <leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
+noremap <silent> <leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
 
 " Let space function as colon
 map <Space> :
