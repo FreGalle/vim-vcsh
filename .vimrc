@@ -71,7 +71,7 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 """""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 
-nnoremap <leader>dg :diffget  \|\| diffupdate<C-Left><C-Left><LEFT>
+nnoremap <Leader>dg :diffget  \|\| diffupdate<C-Left><C-Left><LEFT>
 
 """""""""""""""""""""""""""""""""""
 " ----- tpope/vim-rhubarb -----
@@ -138,7 +138,7 @@ let g:go_highlight_variable_assignments = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_experimental = 1
 
-autocmd FileType go nmap <leader>gt :GoDeclsDir<cr>
+autocmd FileType go nmap <LocalLeader>gt :GoDeclsDir<cr>
 
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
@@ -219,9 +219,9 @@ let g:vimwiki_auto_chdir = 1
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 au Filetype vimwiki let b:delimitMate_expand_space = 0
 
-au Filetype vimwiki nmap <buffer> <Leader>x <Plug>VimwikiToggleListItem
-au Filetype vimwiki nmap <buffer> <Leader>j <Plug>VimwikiDiaryNextDay
-au Filetype vimwiki nmap <buffer> <Leader>k <Plug>VimwikiDiaryPrevDay
+au Filetype vimwiki nmap <buffer> <LocalLeader>x <Plug>VimwikiToggleListItem
+au Filetype vimwiki nmap <buffer> <LocalLeader>j <Plug>VimwikiDiaryNextDay
+au Filetype vimwiki nmap <buffer> <LocalLeader>k <Plug>VimwikiDiaryPrevDay
 
 """"""""""""""""""""""""""""""""""
 " ----- junegunn/vim-easy-align -----
@@ -397,7 +397,8 @@ call Tmpwatch(&undodir, 31)
 "
 
 " Comma becomes the new leader
-let g:mapleader=","
+let mapleader=","
+let maplocalleader="\\"
 
 " Turn the word under the cursor into a UTC-timestamp
 "
@@ -407,10 +408,10 @@ let g:mapleader=","
 "    a UTC timestamp.
 
 " Transform the word under the cursor into a UTC-timestamp.
-noremap <silent> <leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
+noremap <silent> <Leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
 
 " Transform the word under the cursor into a duration (in seconds).
-noremap <silent> <leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
+noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
 
 " Let space function as colon
 map <Space> :
