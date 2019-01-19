@@ -349,7 +349,9 @@ set hlsearch           " Highlight matches
 set incsearch          " Incremental searching
 set ignorecase         " Case doesn't matter
 set smartcase          " Searches are only case-sensitive when containing a case
-set inccommand=nosplit " Incremental in-place replace
+if has ('nvim')
+  set inccommand=nosplit " Incremental in-place replace
+endif
 
 set scrolloff=1
 set sidescrolloff=5
