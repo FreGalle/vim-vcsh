@@ -219,7 +219,7 @@ let g:vimwiki_auto_chdir = 1
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 au Filetype vimwiki let b:delimitMate_expand_space = 0
 
-au Filetype vimwiki map  <buffer> <Leader>x <Plug>VimwikiToggleListItem
+au Filetype vimwiki nmap <buffer> <Leader>x <Plug>VimwikiToggleListItem
 au Filetype vimwiki nmap <buffer> <Leader>j <Plug>VimwikiDiaryNextDay
 au Filetype vimwiki nmap <buffer> <Leader>k <Plug>VimwikiDiaryPrevDay
 
