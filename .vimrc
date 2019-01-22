@@ -293,14 +293,13 @@ set pastetoggle=<F3>
 
 set wildmenu
 set wildmode=full
+set wildcharm=<C-z>
+
+set path-=/usr/include
 
 set autoread
 
 set updatetime=250
-
-" Search down into subfolders
-" Provides tab-completion for all file-related tasks
-set path+=**
 
 set nobackup
 set nowritebackup
@@ -400,6 +399,9 @@ call Tmpwatch(&undodir, 31)
 " Comma becomes the new leader
 let mapleader=","
 let maplocalleader="\\"
+
+nnoremap <Leader>e :edit **/*<C-z><S-Tab>
+nnoremap <Leader>f :find **/*<C-z><S-Tab>
 
 " Turn the word under the cursor into a UTC-timestamp
 "
