@@ -95,6 +95,7 @@ let g:ack_mappings = { "O":  "<CR>zz<C-W><C-W>:ccl<CR>" }
 let g:ack_mappings = { "go": "<CR>zz<C-W>j" }
 let g:ack_mappings = { "s": "<C-W><CR><C-W>K" }
 let g:ack_mappings = { "S": "<C-W><CR><C-W>K<C-W>b" }
+let g:ack_lhandler = "lopen"
 
 if executable("rg")
   let g:ackprg = 'rg --vimgrep --no-heading --column'
