@@ -168,11 +168,6 @@ Plug 'morhetz/gruvbox'
 let g:gruvbox_invert_selection=0
 
 """"""""""""""""""""""""""""""""""
-" ----- docker/docker -----
-""""""""""""""""""""""""""""""""""
-Plug 'docker/docker', {'for':'dockerfile', 'rtp':'/contrib/syntax/vim/', 'frozen':1}
-
-""""""""""""""""""""""""""""""""""
 " ----- kshenoy/vim-signature -----
 """"""""""""""""""""""""""""""""""
 Plug 'kshenoy/vim-signature'
