@@ -118,7 +118,7 @@ Plug 'tpope/vim-commentary'
 """"""""""""""""""""""""""""""""""
 " ----- fatih/vim-go -----
 """"""""""""""""""""""""""""""""""
-Plug 'fatih/vim-go', {'for':'go'}
+Plug 'fatih/vim-go'
 
 let g:go_highlight_extra_types = 0
 let g:go_highlight_space_tab_error = 0
