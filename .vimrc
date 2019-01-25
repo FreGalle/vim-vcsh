@@ -237,6 +237,12 @@ Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['markdown']
 let g:markdown_fenced_languages = ['bash=sh', 'css', 'go', 'json=javascript', 'sql' ]
 
+""""""""""""""""""""""""""""""""""
+" ----- b4winckler/vim-angry -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'b4winckler/vim-angry'
+
 call plug#end()
 
 "
