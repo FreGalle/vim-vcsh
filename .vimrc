@@ -55,8 +55,6 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 """""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 
-nnoremap <Leader>dg :diffget  \|\| diffupdate<C-Left><C-Left><LEFT>
-
 """""""""""""""""""""""""""""""""""
 " ----- tpope/vim-rhubarb -----
 """""""""""""""""""""""""""""""""""
