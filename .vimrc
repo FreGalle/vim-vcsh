@@ -262,28 +262,6 @@ set updatetime=250
 set nobackup
 set nowritebackup
 
-" store swap files in case something goes wrong
-if isdirectory($HOME . '/.vim/cache/swap') == 0
-  call mkdir($HOME.'/.vim/cache/swap', 'p')
-endif
-set directory=~/.vim/cache/swap//
-set directory+=~/tmp//
-set directory+=.
-
-" undofile - This allows you to use undos after exiting and restarting
-if isdirectory($HOME . '/.vim/cache/undo') == 0
-  call mkdir($HOME.'/.vim/cache/undo', 'p')
-endif
-set undodir=~/.vim/cache/undo//
-set undofile
-
-" viminfo stores the the state of your previous editing session
-if exists('+shada')
-  set shada+=n~/.vim/cache/shada
-else
-  set viminfo+=n~/.vim/cache/viminfo
-endif
-
 set showmatch
 
 set autoindent
@@ -333,22 +311,6 @@ set diffopt+=vertical,indent-heuristic,algorithm:patience
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
-
-function! Tmpwatch(path, days)
-    let l:path = expand(a:path)
-    if isdirectory(l:path)
-        for file in split(globpath(l:path, "*"), "\n")
-            if localtime() > getftime(file) + 86400 * a:days && delete(file) != 0
-                echo "Tmpwatch(): Error deleting '" . file . "'"
-            endif
-        endfor
-    else
-        echo "Tmpwatch(): Directory '" . l:path . "' not found"
-    endif
-endfunction
-
-" remove undo files which have not been modified for 31 days
-call Tmpwatch(&undodir, 31)
 
 "
 " "----- Key mappings -----
