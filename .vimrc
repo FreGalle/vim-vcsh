@@ -367,12 +367,6 @@ cnoremap w!! w !sudo tee > /dev/null %
 " Clear the highlighting of :set hlsearch
 nnoremap <esc><esc> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-
 "
 " ----- File Type Settings -----
 "
