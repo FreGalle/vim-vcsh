@@ -5,7 +5,7 @@ endif
 set undodir=~/.vim/cache/undo//
 set undofile
 
-function! Tmpwatch(path, days)
+function! s:tmpwatch(path, days)
     let l:path = expand(a:path)
     if isdirectory(l:path)
         for file in split(globpath(l:path, "*"), "\n")
@@ -19,4 +19,4 @@ function! Tmpwatch(path, days)
 endfunction
 
 " remove undo files which have not been modified for 31 days
-call Tmpwatch(&undodir, 31)
+call s:tmpwatch(&undodir, 31)
