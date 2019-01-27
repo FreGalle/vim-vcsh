@@ -364,16 +364,6 @@ vnoremap . :norm.<CR>
 " Use sudow when trying to save a file without sufficient privileges
 cnoremap w!! w !sudo tee > /dev/null %
 
-" Move between splits more easily
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-tnoremap <C-h> <C-\><C-N><C-W>h
-tnoremap <C-j> <C-\><C-N><C-W>j
-tnoremap <C-k> <C-\><C-N><C-W>k
-tnoremap <C-l> <C-\><C-N><C-W>l
-
 " Clear the highlighting of :set hlsearch
 nnoremap <esc><esc> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
