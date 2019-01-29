@@ -34,16 +34,6 @@ Plug 'tpope/vim-surround'
 """"""""""""""""""""""""""""""""""
 Plug 'tpope/vim-vinegar'
 
-""""""""""""""""""""""""""""""""""
-" ----- ctrlpvim/ctrlp.vim -----
-""""""""""""""""""""""""""""""""""
-Plug 'ctrlpvim/ctrlp.vim'
-
-let g:ctrlp_cache_dir = $HOME.'/.vim/cache/ctrlp'
-let g:ctrlp_buftag_types = {'go' : '--language-force=go --golang-types=ftv'}
-let g:ctrlp_custom_ignore = '\v[\/]vendor|\.(git|hg|svn)$'
-let g:ctrlp_arg_map = 1
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 
