@@ -281,6 +281,7 @@ endif
 
 set scrolloff=1
 set sidescrolloff=5
+set display+=lastline
 
 set linebreak
 set textwidth=79
