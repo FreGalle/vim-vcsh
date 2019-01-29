@@ -356,7 +356,7 @@ vnoremap . :norm.<CR>
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Clear the highlighting of :set hlsearch
-nnoremap <esc><esc> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 "
 " ----- File Type Settings -----
