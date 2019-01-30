@@ -225,7 +225,7 @@ set noerrorbells
 set nonumber
 set ruler
 set showcmd
-set noshowmode
+set showmode
 set hidden
 set laststatus=2
 
