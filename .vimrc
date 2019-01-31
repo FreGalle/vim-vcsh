@@ -117,6 +117,12 @@ Plug 'morhetz/gruvbox'
 let g:gruvbox_invert_selection=0
 
 """"""""""""""""""""""""""""""""""
+" ----- vim-juvenile -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
+
+""""""""""""""""""""""""""""""""""
 " ----- kshenoy/vim-signature -----
 """"""""""""""""""""""""""""""""""
 Plug 'kshenoy/vim-signature'
