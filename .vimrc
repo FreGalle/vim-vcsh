@@ -310,8 +310,8 @@ set formatoptions+=qj1lncr
 set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
 
 " Better Completion
-set complete=.,w,b,u,t
-set completeopt=longest,menuone
+set completeopt+=longest  " Insert longest common substring
+set completeopt+=menuone  " Show the menu even if only one match
 
 set showbreak=›\ 
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
