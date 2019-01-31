@@ -227,6 +227,7 @@ set ruler
 set showcmd
 set noshowmode
 set hidden
+set laststatus=2
 
 set mouse=a
 
