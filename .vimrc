@@ -266,6 +266,8 @@ set expandtab    " Always insert spaces instead of tabs
 
 set nrformats-=octal
 
+set nowrapscan
+
 " Time out on key codes but not mappings.
 set notimeout
 set ttimeout
