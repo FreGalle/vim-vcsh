@@ -269,7 +269,10 @@ set nowritebackup
 
 set showmatch
 
-set backspace=indent,eol,start
+" Let me backspace over pretty much anything
+set backspace+=eol     " Line breaks
+set backspace+=indent  " Spaces from 'autoindent'
+set backspace+=start   " The start of current insertion
 
 " Set default indent settings; tweak on a per-filetype basis
 set autoindent    " Use indent of previous line on new lines
