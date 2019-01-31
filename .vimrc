@@ -269,15 +269,15 @@ set nowritebackup
 
 set showmatch
 
-set autoindent
 set backspace=indent,eol,start
 
-" Set tab behavior, this can also be done on a per-filetype basis
-set tabstop=2    " Number of spaces a tab counts for
-set shiftwidth=2 " Number of spaces used for (auto)indent
-set shiftround   " Round indent to multiples of shiftwidth
-set smarttab     " Inserts shiftwidth when tabbing in front of line
-set expandtab    " Always insert spaces instead of tabs
+" Set default indent settings; tweak on a per-filetype basis
+set autoindent    " Use indent of previous line on new lines
+set tabstop=2     " Number of spaces a tab counts for
+set shiftwidth=2  " Number of spaces used for (auto)indent
+set shiftround    " Round indent to multiples of shiftwidth
+set smarttab      " Inserts shiftwidth when tabbing in front of line
+set expandtab     " Always insert spaces instead of tabs
 
 set nrformats-=octal
 
