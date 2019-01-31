@@ -2,6 +2,8 @@ set nocompatible
 
 call plug#begin()
 
+let g:plug_shallow = 0
+
 " General plugins
 
 """"""""""""""""""""""""""""""""""
@@ -205,6 +207,12 @@ let g:markdown_fenced_languages = ['bash=sh', 'css', 'go', 'json=javascript', 's
 """"""""""""""""""""""""""""""""""
 
 Plug 'b4winckler/vim-angry'
+
+""""""""""""""""""""""""""""""""""
+" ----- vim-big-file-options -----
+""""""""""""""""""""""""""""""""""
+
+Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
 
 call plug#end()
 
