@@ -303,7 +303,6 @@ set scrolloff=1
 set sidescrolloff=5
 set display+=lastline
 
-set linebreak
 set textwidth=79
 set formatoptions+=qj1lncr
 
@@ -313,7 +312,16 @@ set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
 set completeopt+=longest  " Insert longest common substring
 set completeopt+=menuone  " Show the menu even if only one match
 
-set showbreak=›\ 
+" Break lines at word boundaries
+set linebreak
+
+" Indent wrapped lines if supported
+if exists('+breakindent')
+  set breakindent
+  let &showbreak='↳ '
+  set cpoptions+=n
+endif
+
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
 
 set tags=./.tags,./tags,.tags,tags
