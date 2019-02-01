@@ -226,15 +226,44 @@ call plug#end()
 " ----- General settings -----
 "
 
+" Load filetype settings, plugins and maps
 filetype plugin indent on
+
+" Use syntax highlighting
 syntax enable
 
 " set termguicolors
-set background=dark
 
 colorscheme gruvbox
+set background=dark
 
-silent! set encoding=utf-8
+" Set default indent settings; tweak on a per-filetype basis
+set autoindent    " Use indent of previous line on new lines
+set expandtab     " Use spaces instead of tabs
+set shiftround    " Indents to multiples of shiftwidth
+set shiftwidth=2  " Spaces used for (auto)indent
+set smarttab      " Indents by shiftwidth at start of line
+set tabstop=2     " Spaces a tab counts for
+
+" Let me backspace over pretty much anything
+set backspace+=eol     " Line breaks
+set backspace+=indent  " Spaces from 'autoindent'
+set backspace+=start   " The start of current insertion
+
+" Add completion options
+if exists('+completeopt')
+  set completeopt+=longest  " Insert longest common substring
+  set completeopt+=menuone  " Show the menu even if only one match
+endif
+
+" Give me a prompt instead of just rejecting risky :write, :saveas
+set confirm
+
+" Use UTF-8 if we can and env LANG didn't tell us not to
+if has('multi_byte') && !exists('$LANG') && &encoding ==# 'latin1'
+  set encoding=utf-8
+endif
+
 set noerrorbells
 set nonumber
 set ruler
@@ -269,19 +298,6 @@ set nowritebackup
 
 set showmatch
 
-" Let me backspace over pretty much anything
-set backspace+=eol     " Line breaks
-set backspace+=indent  " Spaces from 'autoindent'
-set backspace+=start   " The start of current insertion
-
-" Set default indent settings; tweak on a per-filetype basis
-set autoindent    " Use indent of previous line on new lines
-set tabstop=2     " Number of spaces a tab counts for
-set shiftwidth=2  " Number of spaces used for (auto)indent
-set shiftround    " Round indent to multiples of shiftwidth
-set smarttab      " Inserts shiftwidth when tabbing in front of line
-set expandtab     " Always insert spaces instead of tabs
-
 set nrformats-=octal
 
 set nowrapscan
@@ -307,10 +323,6 @@ set textwidth=79
 set formatoptions+=qj1lncr
 
 set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
-
-" Better Completion
-set completeopt+=longest  " Insert longest common substring
-set completeopt+=menuone  " Show the menu even if only one match
 
 " Break lines at word boundaries
 set linebreak
