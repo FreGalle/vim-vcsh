@@ -1,3 +1,7 @@
+if !exists('+cursorline')
+  finish
+endif
+
 augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
