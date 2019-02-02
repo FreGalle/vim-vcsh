@@ -1,7 +1,14 @@
-" undofile - This allows you to use undos after exiting and restarting
+"
+" undo.vim - Keep undo files.
+"
+if !has('persistent_undo')
+  finish
+endif
+
 if isdirectory($HOME . '/.vim/cache/undo') == 0
   call mkdir($HOME.'/.vim/cache/undo', 'p')
 endif
+
 set undodir=~/.vim/cache/undo//
 set undofile
 
