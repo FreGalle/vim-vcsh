@@ -250,6 +250,16 @@ set backspace+=eol     " Line breaks
 set backspace+=indent  " Spaces from 'autoindent'
 set backspace+=start   " The start of current insertion
 
+" Break lines at word boundaries
+set linebreak
+
+" Indent wrapped lines if supported
+if exists('+breakindent')
+  set breakindent
+  let &showbreak='↳ '
+  set cpoptions+=n
+endif
+
 " Add completion options
 if exists('+completeopt')
   set completeopt+=longest  " Insert longest common substring
@@ -263,6 +273,9 @@ set confirm
 if has('multi_byte') && !exists('$LANG') && &encoding ==# 'latin1'
   set encoding=utf-8
 endif
+
+" Delete comment leaders when joining lines
+set formatoptions+=j
 
 set noerrorbells
 set nonumber
@@ -320,19 +333,9 @@ set sidescrolloff=5
 set display+=lastline
 
 set textwidth=79
-set formatoptions+=qj1lncr
+set formatoptions+=q1lncr
 
 set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
-
-" Break lines at word boundaries
-set linebreak
-
-" Indent wrapped lines if supported
-if exists('+breakindent')
-  set breakindent
-  let &showbreak='↳ '
-  set cpoptions+=n
-endif
 
 set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
 
