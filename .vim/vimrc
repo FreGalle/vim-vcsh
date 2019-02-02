@@ -250,9 +250,6 @@ set backspace+=eol     " Line breaks
 set backspace+=indent  " Spaces from 'autoindent'
 set backspace+=start   " The start of current insertion
 
-" Break lines at word boundaries
-set linebreak
-
 " Indent wrapped lines if supported
 if exists('+breakindent')
   set breakindent
@@ -277,13 +274,64 @@ endif
 " Delete comment leaders when joining lines
 set formatoptions+=j
 
+" Allow buffers to have changes without being displayed
+set hidden
+
+" Keep much more command and search history
+set history=2000
+
+" Highlight completed searches
+set hlsearch
+
+" Show search matches while typing
+set incsearch
+
+" Search ignores case by default; use \C to override
+set ignorecase
+
+" Searches are case-sensitive when containing a case
+set smartcase
+
+" Search-and-replace incrementally in-place
+if has ('nvim')
+  set inccommand=nosplit
+endif
+
+" Clear default 'comments' value, let the filetype handle it
+set comments=
+
+" Don't assume I'm editing C; let the filetype handle it
+set include=
+
+" Don't join lines with two spaces at the end of sentences
+set nojoinspaces
+
+" Always show a statusline, even with just one window
+set laststatus=2
+
+" Don't redraw the screen during batch execution
+set lazyredraw
+
+" Break lines at word boundaries
+set linebreak
+
+" Enable and define extra 'list' display characters
+set list
+set listchars-=eol:$       " Remove default eol entry
+set listchars+=extends:>   " Unwrapped text to screen right
+set listchars+=precedes:<  " Unwrapped text to screen left
+set listchars+=tab:›\      " Tab characters, preserve width
+set listchars+=trail:·     " Trailing spaces
+set listchars+=nbsp:·      " Non-breaking spaces
+
+" Treat numbers with a leading zero as decimal, not octal
+set nrformats-=octal
+
 set noerrorbells
 set nonumber
 set ruler
 set showcmd
 set showmode
-set hidden
-set laststatus=2
 
 set mouse=a
 
@@ -308,22 +356,12 @@ set updatetime=250
 
 set showmatch
 
-set nrformats-=octal
-
 set nowrapscan
 
 " Time out on key codes but not mappings.
 set notimeout
 set ttimeout
 set ttimeoutlen=100
-
-set hlsearch           " Highlight matches
-set incsearch          " Incremental searching
-set ignorecase         " Case doesn't matter
-set smartcase          " Searches are only case-sensitive when containing a case
-if has ('nvim')
-  set inccommand=nosplit " Incremental in-place replace
-endif
 
 set scrolloff=1
 set sidescrolloff=5
@@ -333,8 +371,6 @@ set textwidth=79
 set formatoptions+=q1lncr
 
 set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
-
-set list listchars=tab:›\ ,trail:·,extends:>,precedes:<,nbsp:·
 
 set tags=./.tags,./tags,.tags,tags
 
