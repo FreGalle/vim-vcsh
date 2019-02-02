@@ -253,9 +253,11 @@ set backspace+=start   " The start of current insertion
 " Indent wrapped lines if supported
 if exists('+breakindent')
   set breakindent
-  let &showbreak='↳ '
-  set cpoptions+=n
+  set cpoptions+=n  " Looks better when using cursorline
 endif
+
+" Clear default 'comments' value, let the filetype handle it
+set comments=
 
 " Add completion options
 if exists('+completeopt')
@@ -297,9 +299,6 @@ if has ('nvim')
   set inccommand=nosplit
 endif
 
-" Clear default 'comments' value, let the filetype handle it
-set comments=
-
 " Don't assume I'm editing C; let the filetype handle it
 set include=
 
@@ -324,21 +323,45 @@ set listchars+=tab:›\      " Tab characters, preserve width
 set listchars+=trail:·     " Trailing spaces
 set listchars+=nbsp:·      " Non-breaking spaces
 
+" Enable usage of the mouse in all modes
+set mouse=a
+
 " Treat numbers with a leading zero as decimal, not octal
 set nrformats-=octal
 
+" Options for file search with gf/:find
+set path-=/usr/include  " Let the C/C++ filetypes set that
+set path+=**            " Search current directory's whole tree
+
+" Show file position in command line
+set ruler
+
+" Make sessions usable
+if exists('+sessionoptions')
+  set sessionoptions-=localoptions  " No buffer options or mappings
+  set sessionoptions-=options       " No global options or mappings
+endif
+
+" Indicator to use at beginning of wrapped rows
+let &showbreak='↳ '
+
+" New windows go below or to the right of a split
+set splitright
+set splitbelow
+
+" Disable timeout; I don't like having to wait
+set notimeout
+
+" Enable timeout on key codes; <esc> exits Insert mode quickly
+set ttimeout
+set ttimeoutlen=50
+
 set noerrorbells
 set nonumber
-set ruler
 set showcmd
 set showmode
 
-set mouse=a
-
 set nowrap
-
-set splitright
-set splitbelow
 
 set pastetoggle=<F3>
 
@@ -348,8 +371,6 @@ set wildmenu
 set wildmode=full
 set wildcharm=<C-z>
 
-set path-=/usr/include
-
 set autoread
 
 set updatetime=250
@@ -357,11 +378,6 @@ set updatetime=250
 set showmatch
 
 set nowrapscan
-
-" Time out on key codes but not mappings.
-set notimeout
-set ttimeout
-set ttimeoutlen=100
 
 set scrolloff=1
 set sidescrolloff=5
