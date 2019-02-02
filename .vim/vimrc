@@ -356,6 +356,12 @@ set notimeout
 set ttimeout
 set ttimeoutlen=50
 
+" Wildmenu settings; see also plugin/wildignore.vim
+set wildmenu               " Use wildmenu
+set wildmode=list:longest  " Tab press completes and lists
+set wildignorecase         " Case insensitive
+set wildcharm=<C-z>        " Set for use in mappings to invoke completion
+
 set noerrorbells
 set nonumber
 set showcmd
@@ -366,10 +372,6 @@ set nowrap
 set pastetoggle=<F3>
 
 " set relativenumber " seems to slow down neovim
-
-set wildmenu
-set wildmode=full
-set wildcharm=<C-z>
 
 set autoread
 
@@ -470,12 +472,6 @@ au FileType vim setlocal keywordprg=:help
 au FileType sh setlocal noet ts=4 sw=4
 
 au BufWritePre *.sql :%s/\s\+$//e
-
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX bullshit
 
 " TODO move to different section
 
