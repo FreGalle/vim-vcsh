@@ -268,10 +268,8 @@ endif
 " Give me a prompt instead of just rejecting risky :write, :saveas
 set confirm
 
-" Use UTF-8 if we can and env LANG didn't tell us not to
-if has('multi_byte') && !exists('$LANG') && &encoding ==# 'latin1'
+" Always use UTF-8
   set encoding=utf-8
-endif
 
 " Delete comment leaders when joining lines
 set formatoptions+=j
