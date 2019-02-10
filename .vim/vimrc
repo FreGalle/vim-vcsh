@@ -242,8 +242,6 @@ filetype plugin indent on
 " Use syntax highlighting
 syntax enable
 
-" set termguicolors
-
 colorscheme gruvbox
 set background=dark
 
@@ -287,8 +285,13 @@ set display+=lastline
 " Always use UTF-8
 set encoding=utf-8
 
-" Delete comment leaders when joining lines
-set formatoptions+=j
+" Adjust automatic formatting
+set formatoptions+=c  " Wrap comments using 'textwidth'
+set formatoptions+=r  " Insert comment leader upon <Enter>
+set formatoptions+=j  " Delete comment leaders when joining lines
+set formatoptions+=q  " Allow formatting of comments with "gq"
+set formatoptions+=n  " Recognize numbered lists"
+set formatoptions+=1  " Don't break a line after a one-letter word
 
 " Allow buffers to have changes without being displayed
 set hidden
@@ -385,6 +388,9 @@ set smartcase
 set splitright
 set splitbelow
 
+" Break lines longer than 79 characters
+set textwidth=79
+
 " Disable timeout; I don't like having to wait
 set notimeout
 
@@ -406,9 +412,6 @@ set nowrap
 
 " Searches wrap around the end of the file
 set wrapscan
-
-set textwidth=79
-set formatoptions+=q1lncr
 
 set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
 
@@ -487,7 +490,7 @@ au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 au FileType gitcommit setlocal nolist spell
 au FileType gitconfig setlocal noet ts=4 sw=4
 au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
-au FileType vim setlocal keywordprg=:help
+au FileType vim setlocal keywordprg=:Help
 au FileType sh setlocal noet ts=4 sw=4
 au FileType markdown setlocal expandtab ts=4 sw=4 sts=4 tw=0
 
