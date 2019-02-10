@@ -281,8 +281,11 @@ endif
 " Give me a prompt instead of just rejecting risky :write, :saveas
 set confirm
 
+" Show as much as possible of the last line
+set display+=lastline
+
 " Always use UTF-8
-  set encoding=utf-8
+set encoding=utf-8
 
 " Delete comment leaders when joining lines
 set formatoptions+=j
@@ -301,9 +304,6 @@ set incsearch
 
 " Search ignores case by default; use \C to override
 set ignorecase
-
-" Searches are case-sensitive when containing a case
-set smartcase
 
 " Search-and-replace incrementally in-place
 if has ('nvim')
@@ -353,6 +353,9 @@ set path+=**            " Search current directory's whole tree
 " Show file position in command line
 set ruler
 
+" Always show at least a couple of lines of context
+set scrolloff=5
+
 " Make sessions usable
 if exists('+sessionoptions')
   set sessionoptions-=localoptions  " No buffer options or mappings
@@ -371,12 +374,12 @@ set showmatch
 " Show mode I'm in at the bottom of the screen
 set showmode
 
-" Always show at least a couple of lines of context
-set scrolloff=5
-
 " Scroll at least a couple of columns horizontally
 set sidescroll=5
 set sidescrolloff=1
+
+" Searches are case-sensitive when containing a case
+set smartcase
 
 " New windows go below or to the right of a split
 set splitright
@@ -389,6 +392,9 @@ set notimeout
 set ttimeout
 set ttimeoutlen=50
 
+" Shorter delay for writing to swap file
+set updatetime=250
+
 " Wildmenu settings; see also plugin/wildignore.vim
 set wildmenu               " Use wildmenu
 set wildmode=list:longest  " Tab press completes and lists
@@ -398,11 +404,8 @@ set wildcharm=<C-z>        " Set for use in mappings to invoke completion
 " By default don't open files with line-wrapping
 set nowrap
 
-set updatetime=250
-
-set nowrapscan
-
-set display+=lastline
+" Searches wrap around the end of the file
+set wrapscan
 
 set textwidth=79
 set formatoptions+=q1lncr
