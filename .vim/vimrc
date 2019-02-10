@@ -481,10 +481,7 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 au BufNewFile,BufRead *.json setlocal ft=json expandtab ts=2 sw=2 tw=0
 au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
-au BufNewFile,BufRead *.md setlocal expandtab ts=4 sw=4 sts=4 tw=0
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-
-au BufNewFile,BufRead *.md setlocal filetype=markdown
 au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 
 au FileType gitcommit setlocal nolist spell
@@ -492,6 +489,7 @@ au FileType gitconfig setlocal noet ts=4 sw=4
 au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 au FileType vim setlocal keywordprg=:help
 au FileType sh setlocal noet ts=4 sw=4
+au FileType markdown setlocal expandtab ts=4 sw=4 sts=4 tw=0
 
 au BufWritePre *.sql :%s/\s\+$//e
 
