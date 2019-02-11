@@ -285,6 +285,9 @@ set display+=lastline
 " Always use UTF-8
 set encoding=utf-8
 
+" Set characters used for statuslines and vertical separators
+set fillchars=vert:\|,stl:\-,stlnc:\ ,fold:-,diff:┄
+
 " Adjust automatic formatting
 set formatoptions+=c  " Wrap comments using 'textwidth'
 set formatoptions+=r  " Insert comment leader upon <Enter>
@@ -388,6 +391,9 @@ set smartcase
 set splitright
 set splitbelow
 
+" Recognize hidden tags files as well
+set tags +=./.tags,.tags
+
 " Break lines longer than 79 characters
 set textwidth=79
 
@@ -412,10 +418,6 @@ set nowrap
 
 " Searches wrap around the end of the file
 set wrapscan
-
-set fillchars=vert:\|,stl:\-,stlnc:\-,fold:-,diff:┄
-
-set tags=./.tags,./tags,.tags,tags
 
 set diffopt+=vertical,indent-heuristic,algorithm:patience
 
@@ -492,7 +494,7 @@ au FileType gitconfig setlocal noet ts=4 sw=4
 au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 au FileType vim setlocal keywordprg=:Help
 au FileType sh setlocal noet ts=4 sw=4
-au FileType markdown setlocal expandtab ts=4 sw=4 sts=4 tw=0
+au FileType markdown setlocal expandtab ts=4 sw=4 sts=4
 
 au BufWritePre *.sql :%s/\s\+$//e
 
