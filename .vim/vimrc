@@ -279,6 +279,11 @@ endif
 " Give me a prompt instead of just rejecting risky :write, :saveas
 set confirm
 
+" Adjust diff mode settings
+set diffopt+=vertical            " Start diff mode using vertical splits
+set diffopt+=indent-heuristic    " Use indent heuristic for internal diff engine
+set diffopt+=algorithm:patience  " Use patience algorithm for internal diff engine
+
 " Show as much as possible of the last line
 set display+=lastline
 
@@ -293,7 +298,8 @@ set formatoptions+=c  " Wrap comments using 'textwidth'
 set formatoptions+=r  " Insert comment leader upon <Enter>
 set formatoptions+=j  " Delete comment leaders when joining lines
 set formatoptions+=q  " Allow formatting of comments with "gq"
-set formatoptions+=n  " Recognize numbered lists"
+set formatoptions+=n  " Recognize numbered lists
+set formatoptions+=l  " Don't break a long lines in insert mode
 set formatoptions+=1  " Don't break a line after a one-letter word
 
 " Allow buffers to have changes without being displayed
@@ -418,8 +424,6 @@ set nowrap
 
 " Searches wrap around the end of the file
 set wrapscan
-
-set diffopt+=vertical,indent-heuristic,algorithm:patience
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
