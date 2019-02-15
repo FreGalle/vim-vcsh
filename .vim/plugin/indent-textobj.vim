@@ -130,4 +130,3 @@ onoremap <silent> ii :<c-u>call <sid>inIndentation()<cr>
 " around indentation (indentation level and any surrounding empty lines)
 xnoremap <silent> ai :<c-u>call <sid>aroundIndentation()<cr>
 onoremap <silent> ai :<c-u>call <sid>aroundIndentation()<cr>
-
