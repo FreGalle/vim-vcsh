@@ -42,6 +42,11 @@ Plug 'junegunn/fzf.vim'
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
+" FZF does not seem to correctly redraw its own background in Vim
+if !has('nvim')
+  let g:fzf_colors = { 'fg': ['fg', 'Normal'], 'bg': ['bg', 'Normal']}
+endif
+
 """""""""""""""""""""""""""""""""""
 " ----- tpope/vim-fugitive -----
 """""""""""""""""""""""""""""""""""
