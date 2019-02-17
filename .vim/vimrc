@@ -473,21 +473,19 @@ vnoremap . :norm.<CR>
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Clear the highlighting of :set hlsearch
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+" nnoremap <silent> <Esc> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 "
 " ----- File Type Settings -----
 "
 
 au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
-au BufNewFile,BufRead *.json setlocal ft=json expandtab ts=2 sw=2 tw=0
 au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 
 au FileType gitcommit setlocal nolist spell
 au FileType gitconfig setlocal noet ts=4 sw=4
-au FileType json setlocal conceallevel=0 foldmethod=syntax foldlevel=999
 au FileType vim setlocal keywordprg=:Help
 au FileType sh setlocal noet ts=4 sw=4
 au FileType markdown setlocal expandtab ts=4 sw=4 sts=4
