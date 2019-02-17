@@ -428,9 +428,6 @@ command! -nargs=* -complete=help Help vertical belowright help <args>
 let mapleader=","
 let maplocalleader="\\"
 
-nnoremap <Leader>e :edit **/*<C-z><S-Tab>
-nnoremap <Leader>f :find **/*<C-z><S-Tab>
-
 " Turn the word under the cursor into a UTC-timestamp
 "
 " 1. delete inner word into 'z' register
