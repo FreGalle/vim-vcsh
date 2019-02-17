@@ -1,1 +1,1 @@
-/Users/piesync/.vim/vimrc
+vimrc
