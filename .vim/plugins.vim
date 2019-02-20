@@ -8,8 +8,14 @@ set nocompatible
 let g:plug_shallow = 0
 " }}}
 
-" Plugins {{{
 call plug#begin()
+
+" Colorschemes {{{
+Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
+Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
+" }}}
+" Plugins {{{
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
@@ -26,9 +32,6 @@ Plug 'mileszs/ack.vim'
 Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim', {'for':'go'}
 Plug 'airblade/vim-gitgutter'
-Plug 'sjl/badwolf'
-Plug 'morhetz/gruvbox'
-Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
 Plug 'kshenoy/vim-signature'
 Plug 'mihais/vim-mark'
 Plug 'mbbill/undotree'
@@ -41,8 +44,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'b4winckler/vim-angry'
 Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
-call plug#end()
 " }}}
+
+call plug#end()
 
 " Configuration
 " FZF {{{
