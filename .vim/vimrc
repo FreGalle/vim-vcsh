@@ -111,6 +111,10 @@ set listchars+=tab:›\      " Tab characters, preserve width
 set listchars+=trail:·     " Trailing spaces
 set listchars+=nbsp:·      " Non-breaking spaces
 
+" Configure leader and local-leader keys
+let mapleader=","
+let maplocalleader="\\"
+
 " Enable usage of the mouse in all modes
 set mouse=a
 
@@ -190,16 +194,19 @@ set nowrap
 " Searches wrap around the end of the file
 set wrapscan
 
-" open help vertically
+"
+" Mappings from here on on
+"
+
+" Let space function as colon
+map <Space> :
+
+" Stack normal/visual/select Leader-L to clear search highlight
+nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
+vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
+
+" Help opens a vertical split
 command! -nargs=* -complete=help Help vertical belowright help <args>
-
-"
-" "----- Key mappings -----
-"
-
-" Comma becomes the new leader
-let mapleader=","
-let maplocalleader="\\"
 
 " Turn the word under the cursor into a UTC-timestamp
 "
@@ -214,23 +221,12 @@ noremap <silent> <Leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-1
 " Transform the word under the cursor into a duration (in seconds).
 noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
 
-" Let space function as colon
-map <Space> :
-
 " Prevents from going into Ex-mode accidentally
 nnoremap Q <Nop>
-
-" Exit insert-mode easily
-inoremap jj <ESC>
 
 " When wrapping is on, move cursor by displayed lines instead of file lines
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-nnoremap n nzzzv
-nnoremap N Nzzzv
 
 " Make < and > keep the selection
 vnoremap < <gv
@@ -241,9 +237,6 @@ vnoremap . :norm.<CR>
 
 " Use sudow when trying to save a file without sufficient privileges
 cnoremap w!! w !sudo tee > /dev/null %
-
-" Clear the highlighting of :set hlsearch
-" nnoremap <silent> <Esc> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 "
 " ----- File Type Settings -----
