@@ -182,6 +182,11 @@ set ttimeoutlen=50
 " Shorter delay for writing to swap file
 set updatetime=250
 
+" Let me move beyond buffer text in visual block mode
+if exists('+virtualedit')
+  set virtualedit+=block
+endif
+
 " Wildmenu settings; see also plugin/wildignore.vim
 set wildmenu               " Use wildmenu
 set wildmode=list:longest  " Tab press completes and lists
@@ -219,6 +224,17 @@ vnoremap > >gv
 " Stack normal/visual/select Leader-L to clear search highlight
 nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
 vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
+
+" Remap normal/visual & to preserve substitution flags
+nnoremap <silent> & :&&<CR>
+xnoremap <silent> & :&&<CR>
+
+" Cycle through quicklist/:helpgrep items
+nnoremap [c :cprevious<CR>
+nnoremap ]c :cnext<CR>
+" Cycle through location list items
+nnoremap [l :lprevious<CR>
+nnoremap ]l :lnext<CR>
 
 " Help opens a vertical split
 command! -nargs=* -complete=help Help vertical belowright help <args>
