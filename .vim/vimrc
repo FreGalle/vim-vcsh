@@ -201,6 +201,21 @@ set wrapscan
 " Let space function as colon
 map <Space> :
 
+" Prevents from going into Ex-mode accidentally
+nnoremap Q <Nop>
+
+" Use . in visual mode
+vnoremap . :norm.<CR>
+
+" Make < and > keep the selection
+vnoremap < <gv
+vnoremap > >gv
+
+" When wrapping is on, move cursor by displayed lines instead of file lines
+" Disabled this for now, will see how I fare without it
+" noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+" noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
 " Stack normal/visual/select Leader-L to clear search highlight
 nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
 vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
@@ -220,23 +235,6 @@ noremap <silent> <Leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-1
 
 " Transform the word under the cursor into a duration (in seconds).
 noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
-
-" Prevents from going into Ex-mode accidentally
-nnoremap Q <Nop>
-
-" When wrapping is on, move cursor by displayed lines instead of file lines
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-
-" Make < and > keep the selection
-vnoremap < <gv
-vnoremap > >gv
-
-" Use . in visual mode
-vnoremap . :norm.<CR>
-
-" Use sudow when trying to save a file without sufficient privileges
-cnoremap w!! w !sudo tee > /dev/null %
 
 "
 " ----- File Type Settings -----
