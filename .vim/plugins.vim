@@ -10,26 +10,34 @@ let g:plug_shallow = 0
 
 call plug#begin()
 
+" General {{{
+Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
+Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
+" }}}
 " Colorschemes {{{
 Plug 'sjl/badwolf'
 Plug 'morhetz/gruvbox'
 Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
+" }}}
+" Programming {{{
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+" }}}
+" Language Support {{{
+Plug 'fatih/vim-go'
 " }}}
 " Plugins {{{
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim', {'for':'go'}
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
@@ -43,7 +51,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'b4winckler/vim-angry'
-Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
 " }}}
 
 call plug#end()
@@ -134,7 +141,7 @@ let g:highlightedyank_highlight_duration = 400
 "   * sh?
 
 " I prefer the builtin markdown support
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'go']
 
 " Configuration of vim's builtin markdown syntax
 let g:markdown_fenced_languages = ['bash=sh', 'go', 'sql', 'json']
