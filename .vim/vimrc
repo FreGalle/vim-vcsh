@@ -236,6 +236,10 @@ nnoremap ]c :cnext<CR>
 nnoremap [l :lprevious<CR>
 nnoremap ]l :lnext<CR>
 
+" <Leader>x strips trailing whitespace via a custom plugin
+nmap <Leader>x :StripTrailingWhitespace<CR>
+xmap <Leader>x :StripTrailingWhitespace<CR>
+
 " Help opens a vertical split
 command! -nargs=* -complete=help Help vertical belowright help <args>
 
