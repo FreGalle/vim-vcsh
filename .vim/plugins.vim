@@ -14,6 +14,7 @@ call plug#begin()
 Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
 Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
 Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
+Plug 'https://sanctum.geek.nz/code/vim-shebang-create-exec.git'
 " }}}
 " Colorschemes {{{
 Plug 'sjl/badwolf'
