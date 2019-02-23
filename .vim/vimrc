@@ -268,7 +268,6 @@ au FileType gitcommit setlocal nolist spell
 au FileType gitconfig setlocal noet ts=4 sw=4
 au FileType vim setlocal keywordprg=:Help
 au FileType sh setlocal noet ts=4 sw=4
-au FileType markdown setlocal expandtab ts=4 sw=4 sts=4
 
 au BufWritePre *.sql :%s/\s\+$//e
 
