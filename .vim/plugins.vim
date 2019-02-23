@@ -29,6 +29,10 @@ Plug 'tpope/vim-surround'
 " Language Support {{{
 Plug 'fatih/vim-go'
 " }}}
+" Tmux integration (disabled) {{{
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'edkolev/tmuxline.vim'
+" }}}
 " Plugins {{{
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-speeddating'
@@ -45,8 +49,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
 Plug 'mihais/vim-mark'
 Plug 'mbbill/undotree'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'edkolev/tmuxline.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-highlightedyank'
