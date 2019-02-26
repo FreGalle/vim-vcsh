@@ -236,6 +236,9 @@ nnoremap ]c :cnext<CR>
 nnoremap [l :lprevious<CR>
 nnoremap ]l :lnext<CR>
 
+" Remap insert Ctrl-C to undo the escaped insert operation
+imap <C-C> <Plug>(InsertCancel)
+
 " <Leader>x strips trailing whitespace via a custom plugin
 nmap <Leader>x :StripTrailingWhitespace<CR>
 xmap <Leader>x :StripTrailingWhitespace<CR>
