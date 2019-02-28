@@ -243,6 +243,9 @@ imap <C-C> <Plug>(InsertCancel)
 nmap <Leader>x :StripTrailingWhitespace<CR>
 xmap <Leader>x :StripTrailingWhitespace<CR>
 
+" Map double Ctrl-K in insert mode to search digraph names
+imap <C-K><C-K> <Plug>(DigraphSearch)
+
 " Help opens a vertical split
 command! -nargs=* -complete=help Help vertical belowright help <args>
 
