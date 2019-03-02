@@ -263,7 +263,6 @@ noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 's
 " ----- File Type Settings -----
 "
 
-au FileType vim setlocal keywordprg=:Help
 au FileType sh setlocal noet ts=4 sw=4
 
 au BufWritePre *.sql :%s/\s\+$//e
