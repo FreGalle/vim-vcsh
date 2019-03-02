@@ -266,9 +266,7 @@ noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 's
 " ----- File Type Settings -----
 "
 
-au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.yml.tpl setlocal syntax=yaml
 
 au FileType vim setlocal keywordprg=:Help
 au FileType sh setlocal noet ts=4 sw=4

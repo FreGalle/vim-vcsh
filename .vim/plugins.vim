@@ -35,6 +35,8 @@ Plug 'tpope/vim-surround'
 " }}}
 " Language Syntax Support {{{
 Plug 'fatih/vim-go'
+" }}}
+" Language Syntax Support (disabled) {{{
 " Plug 'tpope/vim-git'
 " }}}
 " Tmux integration (disabled) {{{
@@ -157,7 +159,7 @@ let g:highlightedyank_highlight_duration = 400
 "   * sh?
 
 " I prefer the builtin markdown support
-let g:polyglot_disabled = ['markdown', 'go', 'git']
+let g:polyglot_disabled = ['markdown', 'go', 'git', 'yaml']
 
 " Configuration of vim's builtin markdown syntax
 let g:markdown_fenced_languages = ['bash=sh', 'go', 'sql', 'json']
