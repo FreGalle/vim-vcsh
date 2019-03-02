@@ -246,9 +246,6 @@ xmap <Leader>x :StripTrailingWhitespace<CR>
 " Map double Ctrl-K in insert mode to search digraph names
 imap <C-K><C-K> <Plug>(DigraphSearch)
 
-" Help opens a vertical split
-command! -nargs=* -complete=help Help vertical belowright help <args>
-
 " Turn the word under the cursor into a UTC-timestamp
 "
 " 1. delete inner word into 'z' register
