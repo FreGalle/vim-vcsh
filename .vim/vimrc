@@ -267,8 +267,4 @@ au FileType sh setlocal noet ts=4 sw=4
 
 au BufWritePre *.sql :%s/\s\+$//e
 
-" TODO move to different section
-
-autocmd WinEnter * stopinsert
-
 let g:netrw_banner=0
