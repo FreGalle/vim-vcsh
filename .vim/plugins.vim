@@ -22,6 +22,7 @@ Plug 'https://sanctum.geek.nz/code/vim-foldlevelstart-stdin.git'
 Plug 'https://sanctum.geek.nz/code/vim-insert-cancel.git'
 Plug 'https://sanctum.geek.nz/code/vim-insert-suspend-hlsearch.git'
 Plug 'https://sanctum.geek.nz/code/vim-insert-timeout.git'
+Plug 'https://sanctum.geek.nz/code/vim-quickfix-auto-open.git'
 " }}}
 " Colorschemes {{{
 Plug 'sjl/badwolf'
