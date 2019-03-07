@@ -156,6 +156,7 @@ let g:highlightedyank_highlight_duration = 400
 " Used from this plugin:
 "   * json
 "   * go
+"   * toml
 "   * sql?
 "   * sh?
 
