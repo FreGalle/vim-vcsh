@@ -102,8 +102,7 @@ set lazyredraw
 " Break lines at word boundaries
 set linebreak
 
-" Enable and define extra 'list' display characters
-set list
+" Define extra 'list' display characters
 set listchars-=eol:$       " Remove default eol entry
 set listchars+=extends:>   " Unwrapped text to screen right
 set listchars+=precedes:<  " Unwrapped text to screen left
@@ -238,6 +237,10 @@ nnoremap ]l :lnext<CR>
 
 " Remap insert Ctrl-C to undo the escaped insert operation
 imap <C-C> <Plug>(InsertCancel)
+
+" <Leader>l toggles showing tab, end-of-line, and trailing whitespace
+nnoremap <Leader>l :<C-U>setlocal list! list?<CR>
+xnoremap <Leader>l :<C-U>setlocal list! list?<CR>gv
 
 " <Leader>x strips trailing whitespace via a custom plugin
 nmap <Leader>x :StripTrailingWhitespace<CR>
