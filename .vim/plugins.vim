@@ -36,6 +36,7 @@ Plug 'tpope/vim-surround'
 " }}}
 " Language Syntax Support {{{
 Plug 'fatih/vim-go'
+Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
 " }}}
 " Language Syntax Support (disabled) {{{
 " Plug 'tpope/vim-git'
