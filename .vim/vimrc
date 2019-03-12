@@ -165,8 +165,14 @@ set smartcase
 set splitright
 set splitbelow
 
+" Don't try to highlight lines this long
+set synmaxcol=800
+
 " Recognize hidden tags files as well
 set tags +=./.tags,.tags
+
+" Use 24-bit colors
+set termguicolors
 
 " Break lines longer than 79 characters
 set textwidth=79
