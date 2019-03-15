@@ -155,8 +155,8 @@ set showmatch
 set showmode
 
 " Scroll at least a couple of columns horizontally
-set sidescroll=5
-set sidescrolloff=1
+set sidescroll=1
+set sidescrolloff=10
 
 " Searches are case-sensitive when containing a case
 set smartcase
