@@ -252,6 +252,14 @@ xnoremap <Leader>l :<C-U>setlocal list! list?<CR>gv
 nnoremap <Leader>p "+p
 xnoremap <Leader>p "+p
 
+" <Leader>q closes the current window
+nnoremap <Leader>q <C-w>q
+xnoremap <Leader>q <C-w>qgv
+
+" <Leader>v splits the current window vertically
+nnoremap <Leader>v <C-w>v
+xnoremap <Leader>v <C-w>vgv
+
 " <Leader>x strips trailing whitespace via a custom plugin
 nmap <Leader>x :StripTrailingWhitespace<CR>
 xmap <Leader>x :StripTrailingWhitespace<CR>
