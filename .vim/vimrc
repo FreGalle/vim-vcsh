@@ -256,6 +256,8 @@ xnoremap <Leader>p "+p
 nnoremap <Leader>q <C-w>q
 xnoremap <Leader>q <C-w>qgv
 
+nnoremap <Leader>t :ToTimestamp<CR>
+
 " <Leader>v splits the current window vertically
 nnoremap <Leader>v <C-w>v
 xnoremap <Leader>v <C-w>vgv
@@ -271,16 +273,6 @@ vnoremap <Leader>y  "+y
 
 " Map double Ctrl-K in insert mode to search digraph names
 imap <C-K><C-K> <Plug>(DigraphSearch)
-
-" Turn the word under the cursor into a UTC-timestamp
-"
-" 1. delete inner word into 'z' register
-" 2. ??? 'norm i'
-" 3. Execute a system command to transform the contents of the z-register to
-"    a UTC timestamp.
-
-" Transform the word under the cursor into a UTC-timestamp.
-noremap <silent> <Leader>t "zdiw:exe 'norm i' . system("echo <C-R>z \| cut -c1-10 \| TZ=UTC xargs date -R -r")<CR>kJx
 
 " Transform the word under the cursor into a duration (in seconds).
 noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
