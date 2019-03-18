@@ -12,9 +12,6 @@ call plug#begin()
 
 " General {{{
 Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
-Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
-Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
-Plug 'https://sanctum.geek.nz/code/vim-shebang-create-exec.git'
 Plug 'https://sanctum.geek.nz/code/vim-cmdwin-ctrlc.git'
 Plug 'https://sanctum.geek.nz/code/vim-diff-prune.git'
 Plug 'https://sanctum.geek.nz/code/vim-digraph-search.git'
@@ -24,6 +21,9 @@ Plug 'https://sanctum.geek.nz/code/vim-insert-cancel.git'
 Plug 'https://sanctum.geek.nz/code/vim-insert-suspend-hlsearch.git'
 Plug 'https://sanctum.geek.nz/code/vim-insert-timeout.git'
 Plug 'https://sanctum.geek.nz/code/vim-quickfix-auto-open.git'
+Plug 'https://sanctum.geek.nz/code/vim-shebang-create-exec.git'
+Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
+Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
 " }}}
 " Colorschemes {{{
 Plug 'sjl/badwolf'
