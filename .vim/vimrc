@@ -244,6 +244,12 @@ nnoremap ]l :lnext<CR>
 " Remap insert Ctrl-C to undo the escaped insert operation
 imap <C-C> <Plug>(InsertCancel)
 
+" Map double Ctrl-K in insert mode to search digraph names
+imap <C-K><C-K> <Plug>(DigraphSearch)
+
+" <Leader>e forces a buffer to be editable
+nnoremap <Leader>e :<C-U>setlocal modifiable noreadonly<CR>
+
 " <Leader>l toggles showing tab, end-of-line, and trailing whitespace
 nnoremap <Leader>l :<C-U>setlocal list! list?<CR>
 xnoremap <Leader>l :<C-U>setlocal list! list?<CR>gv
@@ -271,8 +277,11 @@ nnoremap <Leader>y  "+y
 nnoremap <Leader>Y V"+y
 vnoremap <Leader>y  "+y
 
-" Map double Ctrl-K in insert mode to search digraph names
-imap <C-K><C-K> <Plug>(DigraphSearch)
+" <Leader>/ types :vimgrep for me ready to enter a search pattern
+nnoremap <Leader>/ :<C-U>vimgrep /\c/ **<S-Left><S-Left><Right>
+
+" <Leader>DEL deletes the current buffer
+nnoremap <Leader><Delete> :bdelete<CR>
 
 " Transform the word under the cursor into a duration (in seconds).
 noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
