@@ -283,9 +283,6 @@ nnoremap <Leader>y  "+y
 nnoremap <Leader>Y V"+y
 vnoremap <Leader>y  "+y
 
-" <Leader>/ types :vimgrep for me ready to enter a search pattern
-nnoremap <Leader>/ :<C-U>vimgrep /\c/ **<S-Left><S-Left><Right>
-
 " <Leader>DEL deletes the current buffer
 nnoremap <Leader><Delete> :bdelete<CR>
 
