@@ -11,6 +11,9 @@ let g:plug_shallow = 0
 call plug#begin()
 
 " General {{{
+Plug 'machakann/vim-highlightedyank'
+Plug 'mbbill/undotree'
+Plug 'mihais/vim-mark'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
@@ -44,6 +47,8 @@ Plug 'https://sanctum.geek.nz/code/vim-markdown-autoformat.git'
 " Plug 'tpope/vim-git'
 " }}}
 " Programming {{{
+Plug 'airblade/vim-gitgutter'
+Plug 'b4winckler/vim-angry'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -59,15 +64,10 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim', {'for':'go'}
-Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
-Plug 'mihais/vim-mark'
-Plug 'mbbill/undotree'
 Plug 'junegunn/vim-easy-align'
-Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'b4winckler/vim-angry'
 " }}}
 
 call plug#end()
