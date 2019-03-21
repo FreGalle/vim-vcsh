@@ -67,6 +67,12 @@ set formatoptions+=n  " Recognize numbered lists
 set formatoptions+=l  " Don't break a long lines in insert mode
 set formatoptions+=1  " Don't break a line after a one-letter word
 
+" I prefer to use ripgrep whenever possible
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat^=%f:%l:%c:%m
+endif
+
 " Allow buffers to have changes without being displayed
 set hidden
 

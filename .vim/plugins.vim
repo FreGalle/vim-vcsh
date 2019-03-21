@@ -58,7 +58,6 @@ Plug 'vimwiki/vimwiki'
 " Plugins {{{
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 Plug 'AndrewRadev/splitjoin.vim', {'for':'go'}
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
@@ -81,21 +80,6 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 " FZF does not seem to correctly redraw its own background in Vim
 if !has('nvim')
   let g:fzf_colors = { 'fg': ['fg', 'Normal'], 'bg': ['bg', 'Normal']}
-endif
-" }}}
-" ack.vim {{{
-let g:ackhighlight = 1
-let g:ack_autofold_results = 0
-let g:ack_mappings = { "o":  "<CR>zz" }
-let g:ack_mappings = { "O":  "<CR>zz<C-W><C-W>:ccl<CR>" }
-let g:ack_mappings = { "go": "<CR>zz<C-W>j" }
-let g:ack_mappings = { "s": "<C-W><CR><C-W>K" }
-let g:ack_mappings = { "S": "<C-W><CR><C-W>K<C-W>b" }
-let g:ack_lhandler = "lopen"
-
-if executable("rg")
-  let g:ackprg = 'rg --vimgrep --no-heading --column'
-  set grepformat^=%f:%l:%c:%m
 endif
 " }}}
 " gruvbox {{{
