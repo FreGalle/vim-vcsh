@@ -1,0 +1,1 @@
+highlight link HighlightedyankRegion MoreMsg
