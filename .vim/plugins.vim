@@ -85,6 +85,9 @@ if !has('nvim')
   let g:fzf_colors = { 'fg': ['fg', 'Normal'], 'bg': ['bg', 'Normal']}
 endif
 " }}}
+" clam {{{
+let g:clam_winwidth = 84
+" }}}
 " splitjoin {{{
 " Don't set up the default mappings
 let g:splitjoin_split_mapping = ''
