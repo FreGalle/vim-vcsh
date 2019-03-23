@@ -34,11 +34,6 @@ Plug 'https://sanctum.geek.nz/code/vim-shebang-create-exec.git'
 Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
 Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
 " }}}
-" Colorschemes {{{
-Plug 'sjl/badwolf'
-Plug 'morhetz/gruvbox'
-Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
-" }}}
 " Language Syntax Support {{{
 Plug 'fatih/vim-go'
 Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
@@ -54,6 +49,11 @@ Plug 'b4winckler/vim-angry'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+" }}}
+" Colorschemes {{{
+Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
+Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
 " }}}
 " Project Management {{{
 Plug 'vimwiki/vimwiki'
