@@ -10,7 +10,8 @@ let g:plug_shallow = 0
 
 call plug#begin()
 
-" General {{{
+" General Text Editing {{{
+Plug 'junegunn/goyo.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'mihais/vim-mark'
@@ -66,7 +67,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/goyo.vim'
 Plug 'sheerun/vim-polyglot'
 " }}}
 
