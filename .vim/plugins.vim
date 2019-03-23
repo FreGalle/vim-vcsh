@@ -47,6 +47,7 @@ Plug 'https://sanctum.geek.nz/code/vim-markdown-autoformat.git'
 " Plug 'tpope/vim-git'
 " }}}
 " Programming {{{
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'b4winckler/vim-angry'
 Plug 'tpope/vim-commentary'
@@ -63,7 +64,6 @@ Plug 'vimwiki/vimwiki'
 " Plugins {{{
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-Plug 'AndrewRadev/splitjoin.vim', {'for':'go'}
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/goyo.vim'
@@ -81,6 +81,11 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 if !has('nvim')
   let g:fzf_colors = { 'fg': ['fg', 'Normal'], 'bg': ['bg', 'Normal']}
 endif
+" }}}
+" splitjoin {{{
+" Don't set up the default mappings
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
 " }}}
 " gruvbox {{{
 let g:gruvbox_invert_selection=0
