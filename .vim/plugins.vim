@@ -10,6 +10,9 @@ let g:plug_shallow = 0
 
 call plug#begin()
 
+" Experimental {{{
+Plug 'sjl/clam.vim'
+" }}}
 " General Text Editing {{{
 Plug 'junegunn/goyo.vim'
 Plug 'machakann/vim-highlightedyank'
