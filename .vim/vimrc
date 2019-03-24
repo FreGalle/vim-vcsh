@@ -246,6 +246,9 @@ nnoremap ]c :cnext<CR>
 " Cycle through location list items
 nnoremap [l :lprevious<CR>
 nnoremap ]l :lnext<CR>
+" Cycle through git changes
+nnoremap [h <Plug>GitGutterPrevHunk
+nnoremap ]h <Plug>GitGutterNextHunk
 
 " Remap insert Ctrl-C to undo the escaped insert operation
 imap <C-C> <Plug>(InsertCancel)

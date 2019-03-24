@@ -99,10 +99,6 @@ let g:splitjoin_join_mapping = ''
 " gruvbox {{{
 let g:gruvbox_invert_selection=0
 " }}}
-" gitgutter {{{
-nmap [h <Plug>GitGutterPrevHunk
-nmap ]h <Plug>GitGutterNextHunk
-" }}}
 " vim-mark {{{
 nmap <Leader>1 <Plug>MarkSearchGroup1Next
 nmap <Leader>2 <Plug>MarkSearchGroup2Next
