@@ -227,11 +227,6 @@ vnoremap . :norm.<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" When wrapping is on, move cursor by displayed lines instead of file lines
-" Disabled this for now, will see how I fare without it
-" noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-" noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-
 " Stack normal/visual/select Leader-L to clear search highlight
 nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
 vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
