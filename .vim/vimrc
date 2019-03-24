@@ -253,6 +253,11 @@ imap <C-C> <Plug>(InsertCancel)
 " Map double Ctrl-K in insert mode to search digraph names
 imap <C-K><C-K> <Plug>(DigraphSearch)
 
+" Start interactive EasyAlign for a motion/text object (e.g. gaip) or in visual
+" mode (e.g. vipga)
+nnoremap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
+
 " <Leader>b opens the list of buffers
 nnoremap <Leader>b :<C-U>Buffers<CR>
 

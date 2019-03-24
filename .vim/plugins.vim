@@ -15,6 +15,7 @@ Plug 'sjl/clam.vim'
 " }}}
 " General Text Editing {{{
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'mihais/vim-mark'
@@ -70,7 +71,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
 " }}}
 
@@ -137,12 +137,6 @@ let g:vimwiki_list = [wiki_personal, wiki_work]
 " au Filetype vimwiki nmap <buffer> <LocalLeader>x <Plug>VimwikiToggleListItem
 " au Filetype vimwiki nmap <buffer> <LocalLeader>j <Plug>VimwikiDiaryNextDay
 " au Filetype vimwiki nmap <buffer> <LocalLeader>k <Plug>VimwikiDiaryPrevDay
-" }}}
-" vim-easy-align {{{
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 " }}}
 " highlightedyank {{{
 let g:highlightedyank_highlight_duration = 400
