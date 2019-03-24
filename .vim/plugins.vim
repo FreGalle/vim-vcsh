@@ -13,9 +13,14 @@ call plug#begin()
 " Experimental {{{
 Plug 'sjl/clam.vim'
 " }}}
-" General Text Editing {{{
+" General {{{
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" }}}
+" Text Editing {{{
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'mihais/vim-mark'
@@ -68,9 +73,6 @@ Plug 'vimwiki/vimwiki'
 " Plug 'edkolev/tmuxline.vim'
 " }}}
 " Plugins {{{
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
-Plug 'kshenoy/vim-signature'
 Plug 'sheerun/vim-polyglot'
 " }}}
 
