@@ -253,8 +253,8 @@ inoremap <C-K><C-K> <Plug>(DigraphSearch)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip) or in visual
 " mode (e.g. vipga)
-nnoremap ga <Plug>(EasyAlign)
-xnoremap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 
 " <Leader>b opens the list of buffers
 nnoremap <Leader>b :<C-U>Buffers<CR>
