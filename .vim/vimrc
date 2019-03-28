@@ -265,6 +265,12 @@ nnoremap <Leader>e :<C-U>setlocal modifiable noreadonly<CR>
 " <Leader>f opens the fuzzy file finder
 nnoremap <Leader>f :<C-U>Files<CR>
 
+" <Leader>g changes directory to the current file's location (window)
+nnoremap <Leader>g :<C-U>lcd %:h<CR>:pwd<CR>
+
+" <Leader>G changes directory to the current file's location
+nnoremap <Leader>G :<C-U>cd %:h<CR>:pwd<CR>
+
 " <Leader>l toggles showing tab, end-of-line, and trailing whitespace
 nnoremap <Leader>l :<C-U>setlocal list! list?<CR>
 xnoremap <Leader>l :<C-U>setlocal list! list?<CR>gv
