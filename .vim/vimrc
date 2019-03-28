@@ -227,7 +227,7 @@ vnoremap . :norm.<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" Stack normal/visual/select Leader-L to clear search highlight
+" Stack normal/visual/select <Leader><Space> to clear search highlight
 nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
 vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
 
@@ -300,6 +300,9 @@ vnoremap <Leader>y  "+y
 
 " <Leader>DEL deletes the current buffer
 nnoremap <Leader><Delete> :bdelete<CR>
+
+" <Leader>% uses entire buffer as a linewise object; keeps position
+onoremap <Leader>% :<C-U>normal! mZ1GVG<CR>`Z:delm Z<CR>
 
 " Transform the word under the cursor into a duration (in seconds).
 noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
