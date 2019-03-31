@@ -45,11 +45,19 @@ Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
 Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
 " }}}
 " Language Syntax Support {{{
+Plug 'amadeus/vim-xml'
+Plug 'cespare/vim-toml'
+Plug 'chrisbra/csv.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
+Plug 'plasticboy/vim-markdown'
+Plug 'stephpy/vim-yaml'
+Plug 'uarun/vim-protobuf'
 Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
-Plug 'https://sanctum.geek.nz/code/vim-markdown-autoformat.git'
 " }}}
 " Language Syntax Support (disabled) {{{
+" Plug 'sheerun/vim-polyglot'
 " Plug 'tpope/vim-git'
 " }}}
 " Programming {{{
@@ -71,9 +79,6 @@ Plug 'vimwiki/vimwiki'
 " Tmux integration (disabled) {{{
 " Plug 'christoomey/vim-tmux-navigator'
 " Plug 'edkolev/tmuxline.vim'
-" }}}
-" Plugins {{{
-Plug 'sheerun/vim-polyglot'
 " }}}
 
 call plug#end()
@@ -138,27 +143,6 @@ let g:vimwiki_list = [wiki_personal, wiki_work]
 " }}}
 " highlightedyank {{{
 let g:highlightedyank_highlight_duration = 400
-" }}}
-" polyglot {{{
-" I used to use the quite excellent sheerun/vim-polyglot, but it imposed some
-" of its own defaults, which made it difficult to rely on the documentation of
-" the used plugins.
-
-" Used from this plugin:
-"   * json
-"   * go
-"   * toml
-"   * sql?
-"   * sh?
-
-" I prefer the builtin markdown support
-let g:polyglot_disabled = ['markdown', 'go', 'git', 'yaml']
-
-" Configuration of vim's builtin markdown syntax
-let g:markdown_fenced_languages = ['bash=sh', 'go', 'sql', 'json']
-
-" Required as long as I keep using vim_polyglot as it disables this by default
-let g:vim_json_syntax_conceal = 1
 " }}}
 
 " vim: tw=80 fdm=marker:
