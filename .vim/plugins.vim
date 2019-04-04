@@ -144,5 +144,9 @@ let g:vimwiki_list = [wiki_personal, wiki_work]
 " highlightedyank {{{
 let g:highlightedyank_highlight_duration = 400
 " }}}
+" vim-json {{{
+" The syntax concealment is generally too resource-intensive
+let g:vim_json_syntax_conceal = 0
+" }}}
 
 " vim: tw=80 fdm=marker:
