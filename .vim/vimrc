@@ -283,6 +283,7 @@ xnoremap <Leader>p "+p
 nnoremap <Leader>q <C-w>q
 xnoremap <Leader>q <C-w>qgv
 
+" <Leader>t transforms the number under the cursor into a timestamp
 nnoremap <Leader>t :ToTimestamp<CR>
 
 " <Leader>v splits the current window vertically
