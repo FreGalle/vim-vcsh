@@ -11,7 +11,6 @@ let g:plug_shallow = 0
 call plug#begin()
 
 " Experimental {{{
-Plug 'sjl/clam.vim'
 " }}}
 " General {{{
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -64,6 +63,7 @@ Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'b4winckler/vim-angry'
+Plug 'sjl/clam.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
