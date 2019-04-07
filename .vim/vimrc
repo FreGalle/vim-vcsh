@@ -283,6 +283,9 @@ xnoremap <Leader>p "+p
 nnoremap <Leader>q <C-w>q
 xnoremap <Leader>q <C-w>qgv
 
+" <Leader>s transforms the number under the cursor into a duration in seconds
+noremap <Leader>s :ToSecDuration<CR>
+
 " <Leader>t transforms the number under the cursor into a timestamp
 nnoremap <Leader>t :ToTimestamp<CR>
 
@@ -304,9 +307,6 @@ nnoremap <Leader><Delete> :bdelete<CR>
 
 " <Leader>% uses entire buffer as a linewise object; keeps position
 onoremap <Leader>% :<C-U>normal! mZ1GVG<CR>`Z:delm Z<CR>
-
-" Transform the word under the cursor into a duration (in seconds).
-noremap <silent> <Leader>s "zdiw:exe 'norm i' . system("printf '%.3f\n' `echo 'scale=3;<C-R>z/1000000000' \| bc`")<CR>kJx
 
 "
 " ----- File Type Settings -----
