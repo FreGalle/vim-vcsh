@@ -249,7 +249,7 @@ nmap ]h <Plug>GitGutterNextHunk
 imap <C-C> <Plug>(InsertCancel)
 
 " Map double Ctrl-K in insert mode to search digraph names
-inoremap <C-K><C-K> <Plug>(DigraphSearch)
+imap <C-K><C-K> <Plug>(DigraphSearch)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip) or in visual
 " mode (e.g. vipga)
