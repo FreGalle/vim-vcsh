@@ -6,3 +6,4 @@ Abolish authoirzed authorized
 Abolish importatn important
 Abolish imporant important
 Abolish ragne range
+Abolish chagnes changes
