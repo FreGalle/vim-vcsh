@@ -260,7 +260,7 @@ xmap ga <Plug>(EasyAlign)
 nnoremap <Leader>b :<C-U>Buffers<CR>
 
 " <Leader>e forces a buffer to be editable
-nnoremap <Leader>e :<C-U>setlocal modifiable noreadonly<CR>
+nnoremap <Leader>e :<C-U>setlocal modifiable noreadonly undofile undolevels=50<CR>
 
 " <Leader>f opens the fuzzy file finder
 nnoremap <Leader>f :<C-U>Files<CR>
