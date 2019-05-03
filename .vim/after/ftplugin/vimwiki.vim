@@ -12,3 +12,6 @@ if has('spell') && &modifiable && !&readonly
   setlocal spell
   let b:undo_ftplugin .= '|setlocal spell<'
 endif
+
+" Handy abbreviations/snippets
+iabbrev <expr> <buffer> :d strftime("%Y-%m-%d")
