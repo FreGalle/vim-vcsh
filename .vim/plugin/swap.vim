@@ -5,3 +5,4 @@ endif
 set directory=~/.vim/cache/swap//
 set directory+=~/tmp//
 set directory+=.
+set swapfile
