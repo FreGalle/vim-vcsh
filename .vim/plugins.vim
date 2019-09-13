@@ -60,6 +60,7 @@ Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
 " Plug 'tpope/vim-git'
 " }}}
 " Programming {{{
+Plug 'AndrewRadev/linediff.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'b4winckler/vim-angry'
