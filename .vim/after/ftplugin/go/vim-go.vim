@@ -19,6 +19,7 @@ let g:go_highlight_variable_declarations = 0
 let g:go_highlight_variable_assignments = 0
 
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = 'godef'
 
 nnoremap <LocalLeader>gt :GoDeclsDir<cr>
 nnoremap <LocalLeader>gb :GoBuild<CR>
