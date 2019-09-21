@@ -18,6 +18,10 @@ if exists('g:no_plugin_maps') || exists('g:no_markdown_maps')
   finish
 endif
 
+" Instant preview using vim-markdown-preview
+nnoremap <buffer> <LocalLeader>p :InstantMarkdownPreview<CR>
+let b:undo_ftplugin .= '|nunmap <buffer> <LocalLeader>p'
+
 " Quote operator
 nnoremap <buffer> <expr> <LocalLeader>q
       \ quote#Quote()

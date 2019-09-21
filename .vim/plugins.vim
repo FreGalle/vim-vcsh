@@ -23,6 +23,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'mihais/vim-mark'
+Plug 'suan/vim-instant-markdown', {'for': ['markdown','vimwiki']}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
@@ -149,6 +150,11 @@ let g:highlightedyank_highlight_duration = 400
 " vim-json {{{
 " The syntax concealment is generally too resource-intensive
 let g:vim_json_syntax_conceal = 0
+" }}}
+" vim-instant-markdown {{{
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_python = 1
 " }}}
 
 " vim: tw=80 fdm=marker:

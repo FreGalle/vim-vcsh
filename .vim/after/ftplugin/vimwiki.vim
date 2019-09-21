@@ -13,5 +13,9 @@ if has('spell') && &modifiable && !&readonly
   let b:undo_ftplugin .= '|setlocal spell<'
 endif
 
+" Instant preview using vim-markdown-preview
+nnoremap <buffer> <LocalLeader>p :InstantMarkdownPreview<CR>
+let b:undo_ftplugin .= '|nunmap <buffer> <LocalLeader>p'
+
 " Handy abbreviations/snippets
 iabbrev <expr> <buffer> :d strftime("%Y-%m-%d")
