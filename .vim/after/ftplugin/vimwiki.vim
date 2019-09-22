@@ -19,3 +19,4 @@ let b:undo_ftplugin .= '|nunmap <buffer> <LocalLeader>p'
 
 " Handy abbreviations/snippets
 iabbrev <expr> <buffer> :d strftime("%Y-%m-%d")
+iabbrev <expr> <buffer> :t strftime("%H:%M")
