@@ -77,7 +77,7 @@ Plug 'morhetz/gruvbox'
 Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
 " }}}
 " Project Management {{{
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', {'branch': 'dev'}
 " }}}
 " Tmux integration (disabled) {{{
 " Plug 'christoomey/vim-tmux-navigator'
