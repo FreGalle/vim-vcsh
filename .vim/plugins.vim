@@ -44,7 +44,11 @@ Plug 'https://sanctum.geek.nz/code/vim-shebang-create-exec.git'
 Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
 Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
 " }}}
-" Language Syntax Support {{{
+" Language Syntax Support {{{1
+" Disabled {{{2
+" Plug 'sheerun/vim-polyglot'
+" Plug 'tpope/vim-git'
+" 2}}}
 Plug 'amadeus/vim-xml'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
@@ -55,11 +59,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'stephpy/vim-yaml'
 Plug 'uarun/vim-protobuf'
 Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
-" }}}
-" Language Syntax Support (disabled) {{{
-" Plug 'sheerun/vim-polyglot'
-" Plug 'tpope/vim-git'
-" }}}
+" 1}}}
 " Programming {{{
 Plug 'AndrewRadev/linediff.vim'
 Plug 'AndrewRadev/splitjoin.vim'
