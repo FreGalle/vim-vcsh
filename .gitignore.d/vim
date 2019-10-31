@@ -1,0 +1,13 @@
+*
+!/.config
+!/.config/nvim
+!/.vim
+!/.vim/**
+/.vim/.netrwhist
+/.vim/cache
+/.vim/cache/**
+/.vim/plugged
+/.vim/plugged/**
+!/README.md
+!/.gitignore.d
+!/.gitignore.d/vim
