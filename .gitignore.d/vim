@@ -8,6 +8,7 @@
 /.vim/cache/**
 /.vim/plugged
 /.vim/plugged/**
-!/README.md
+!/.README.d
+!/.README.d/vim.md
 !/.gitignore.d
 !/.gitignore.d/vim
