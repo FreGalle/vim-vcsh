@@ -125,14 +125,14 @@ let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_global_ext = 0
 
 let wiki_personal = {}
-let wiki_personal.path = '~/Documents/wikis/personal/'
+let wiki_personal.path = '~/Dropbox/Wikis/personal/'
 let wiki_personal.syntax = 'markdown'
 let wiki_personal.ext = '.md'
 let wiki_personal.auto_toc = 1
 let wiki_personal.auto_tags = 1
 
 let wiki_work = {}
-let wiki_work.path = '~/Documents/wikis/work/'
+let wiki_work.path = '~/Dropbox/Wikis/work/'
 let wiki_work.syntax = 'markdown'
 let wiki_work.ext = '.md'
 let wiki_work.auto_toc = 1
