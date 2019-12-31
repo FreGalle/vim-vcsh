@@ -63,6 +63,7 @@ Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
 " Programming {{{
 Plug 'AndrewRadev/linediff.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'andymass/vim-matchup'
 Plug 'airblade/vim-gitgutter'
 Plug 'b4winckler/vim-angry'
 Plug 'sjl/clam.vim'
@@ -147,6 +148,9 @@ let g:vimwiki_list = [wiki_personal, wiki_work]
 " }}}
 " highlightedyank {{{
 let g:highlightedyank_highlight_duration = 400
+" }}}
+" vim-matchup {{{
+let g:matchup_matchparen_enabled = 0
 " }}}
 " vim-json {{{
 " The syntax concealment is generally too resource-intensive
