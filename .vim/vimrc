@@ -176,6 +176,7 @@ set synmaxcol=800
 
 " Recognize hidden tags files as well
 set tags +=./.tags,.tags
+set tags^=./.git/tags
 
 " Use 24-bit colors
 set termguicolors
