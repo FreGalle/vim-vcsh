@@ -51,7 +51,7 @@ Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
 " 2}}}
 Plug 'amadeus/vim-xml'
 Plug 'cespare/vim-toml'
-Plug 'chrisbra/csv.vim'
+Plug 'mechatroner/rainbow_csv'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
