@@ -228,10 +228,6 @@ vnoremap . :norm.<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" Stack normal/visual/select <Leader><Space> to clear search highlight
-nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
-vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
-
 " Remap normal/visual & to preserve substitution flags
 nnoremap <silent> & :&&<CR>
 xnoremap <silent> & :&&<CR>
@@ -256,6 +252,10 @@ imap <C-K><C-K> <Plug>(DigraphSearch)
 " mode (e.g. vipga)
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
+
+" Stack normal/visual/select <Leader><Space> to clear search highlight
+nnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>
+vnoremap <silent> <Leader><Space> :<C-U>nohlsearch<CR>gv
 
 " <Leader>b opens the list of buffers
 nnoremap <Leader>b :<C-U>Buffers<CR>
