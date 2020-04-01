@@ -23,6 +23,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'mihais/vim-mark'
+Plug 'nelstrom/vim-visual-star-search'
 Plug 'suan/vim-instant-markdown', {'for': ['markdown','vimwiki']}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-obsession'
