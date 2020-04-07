@@ -13,6 +13,9 @@ if has('spell') && &modifiable && !&readonly
   let b:undo_ftplugin .= '|setlocal spell<'
 endif
 
+" Respect typed casing on auto-completion
+set infercase
+
 " Instant preview using vim-markdown-preview
 nnoremap <buffer> <LocalLeader>p :InstantMarkdownPreview<CR>
 let b:undo_ftplugin .= '|nunmap <buffer> <LocalLeader>p'

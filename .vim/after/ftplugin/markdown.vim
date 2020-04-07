@@ -13,6 +13,9 @@ if has('spell') && &modifiable && !&readonly
   let b:undo_ftplugin .= '|setlocal spell<'
 endif
 
+" Respect typed casing on auto-completion
+set infercase
+
 " Stop here if the user doesn't want ftplugin mappings
 if exists('g:no_plugin_maps') || exists('g:no_markdown_maps')
   finish
