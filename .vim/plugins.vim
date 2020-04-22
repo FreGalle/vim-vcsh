@@ -4,93 +4,90 @@
 "
 
 " Initialisation {{{
-set nocompatible
-let g:plug_shallow = 0
+packadd minpac
+call minpac#init() "
 " }}}
-
-call plug#begin()
 
 " Experimental {{{
 " }}}
 " General {{{
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('junegunn/fzf.vim')
 " }}}
 " Text Editing {{{
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'kshenoy/vim-signature'
-Plug 'machakann/vim-highlightedyank'
-Plug 'mbbill/undotree'
-Plug 'mihais/vim-mark'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'suan/vim-instant-markdown', {'for': ['markdown','vimwiki']}
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'https://sanctum.geek.nz/code/vim-big-file-options.git'
-Plug 'https://sanctum.geek.nz/code/vim-cmdwin-ctrlc.git'
-Plug 'https://sanctum.geek.nz/code/vim-diff-prune.git'
-Plug 'https://sanctum.geek.nz/code/vim-digraph-search.git'
-Plug 'https://sanctum.geek.nz/code/vim-equalalways-resized.git'
-Plug 'https://sanctum.geek.nz/code/vim-foldlevelstart-stdin.git'
-Plug 'https://sanctum.geek.nz/code/vim-insert-cancel.git'
-Plug 'https://sanctum.geek.nz/code/vim-insert-suspend-hlsearch.git'
-Plug 'https://sanctum.geek.nz/code/vim-insert-timeout.git'
-Plug 'https://sanctum.geek.nz/code/vim-quickfix-auto-open.git'
-Plug 'https://sanctum.geek.nz/code/vim-shebang-create-exec.git'
-Plug 'https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git'
-Plug 'https://sanctum.geek.nz/code/vim-uncap-ex.git'
+call minpac#add('junegunn/goyo.vim')
+call minpac#add('junegunn/vim-easy-align')
+call minpac#add('kshenoy/vim-signature')
+call minpac#add('machakann/vim-highlightedyank')
+call minpac#add('mbbill/undotree')
+call minpac#add('mihais/vim-mark')
+call minpac#add('nelstrom/vim-visual-star-search')
+call minpac#add('suan/vim-instant-markdown', {'type': 'opt'})
+call minpac#add('tpope/vim-abolish')
+call minpac#add('tpope/vim-obsession')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-speeddating')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-vinegar')
+call minpac#add('https://sanctum.geek.nz/code/vim-big-file-options.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-cmdwin-ctrlc.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-diff-prune.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-digraph-search.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-equalalways-resized.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-foldlevelstart-stdin.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-insert-cancel.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-insert-suspend-hlsearch.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-insert-timeout.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-quickfix-auto-open.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-shebang-create-exec.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git', {'depth': 0})
+call minpac#add('https://sanctum.geek.nz/code/vim-uncap-ex.git', {'depth': 0})
 " }}}
 " Language Syntax Support {{{1
 " Disabled {{{2
-" Plug 'sheerun/vim-polyglot'
-" Plug 'tpope/vim-git'
+" call minpac#add('sheerun/vim-polyglot')
+" call minpac#add('tpope/vim-git')
 " 2}}}
-Plug 'amadeus/vim-xml'
-Plug 'cespare/vim-toml'
-Plug 'mechatroner/rainbow_csv'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'elzr/vim-json'
-Plug 'fatih/vim-go'
-Plug 'plasticboy/vim-markdown'
-Plug 'stephpy/vim-yaml'
-Plug 'uarun/vim-protobuf'
-Plug 'https://sanctum.geek.nz/code/vim-make-target.git'
+call minpac#add('amadeus/vim-xml')
+call minpac#add('cespare/vim-toml')
+call minpac#add('mechatroner/rainbow_csv')
+call minpac#add('ekalinin/Dockerfile.vim')
+call minpac#add('elzr/vim-json')
+call minpac#add('fatih/vim-go')
+call minpac#add('plasticboy/vim-markdown')
+call minpac#add('stephpy/vim-yaml')
+call minpac#add('uarun/vim-protobuf')
+call minpac#add('https://sanctum.geek.nz/code/vim-make-target.git', {'depth': 0})
 " 1}}}
 " Programming {{{
-Plug 'AndrewRadev/linediff.vim'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'andymass/vim-matchup'
-Plug 'airblade/vim-gitgutter'
-Plug 'b4winckler/vim-angry'
-Plug 'sjl/clam.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'
+call minpac#add('AndrewRadev/linediff.vim')
+call minpac#add('AndrewRadev/splitjoin.vim')
+call minpac#add('andymass/vim-matchup')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('b4winckler/vim-angry')
+call minpac#add('sjl/clam.vim')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-rhubarb')
+call minpac#add('tpope/vim-surround')
 " }}}
 " Colorschemes {{{
-Plug 'sjl/badwolf'
-Plug 'morhetz/gruvbox'
-Plug 'https://sanctum.geek.nz/code/vim-juvenile.git'
+call minpac#add('sjl/badwolf')
+call minpac#add('morhetz/gruvbox')
+call minpac#add('https://sanctum.geek.nz/code/vim-juvenile.git', {'depth': 0})
 " }}}
 " Project Management {{{
-Plug 'vimwiki/vimwiki', {'branch': 'dev'}
+call minpac#add('vimwiki/vimwiki', {'branch': 'dev'})
 " }}}
 " Tmux integration (disabled) {{{
-" Plug 'christoomey/vim-tmux-navigator'
-" Plug 'edkolev/tmuxline.vim'
+" call minpac#add('christoomey/vim-tmux-navigator')
+" call minpac#add('edkolev/tmuxline.vim')
 " }}}
-
-call plug#end()
 
 " Configuration
 " FZF {{{
+set rtp+=/usr/local/opt/fzf
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 

@@ -6,8 +6,8 @@
 /.vim/.netrwhist
 /.vim/cache
 /.vim/cache/**
-/.vim/plugged
-/.vim/plugged/**
+/.vim/pack/minpac
+/.vim/pack/minpac/**
 !/.README.d
 !/.README.d/vim.md
 !/.gitignore.d
