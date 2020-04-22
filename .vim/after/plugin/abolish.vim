@@ -1,3 +1,7 @@
+if ! exists(':Abolish')
+  finish
+endif
+
 Abolish teh the
 Abolish seperate separate
 Abolish arugment argument
