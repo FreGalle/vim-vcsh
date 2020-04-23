@@ -168,5 +168,8 @@ let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_python = 1
 " }}}
+" vim-projectionist {{{
+let g:projectionist_heuristics = json_decode(join(readfile(expand('~/.vim/projections.json'))))
+" }}}
 
 " vim: tw=80 fdm=marker:
