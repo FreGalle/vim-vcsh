@@ -75,6 +75,12 @@ call minpac#add('tpope/vim-surround')
 " Colorschemes {{{
 call minpac#add('sjl/badwolf')
 call minpac#add('morhetz/gruvbox')
+call minpac#add('tomasr/molokai')
+call minpac#add('Lokaltog/vim-distinguished')
+call minpac#add('fenetikm/falcon')
+call minpac#add('haishanh/night-owl.vim')
+call minpac#add('rakr/vim-one')
+call minpac#add('KeitaNakamura/neodark.vim')
 call minpac#add('https://sanctum.geek.nz/code/vim-juvenile.git', {'depth': 0})
 " }}}
 " Project Management {{{
