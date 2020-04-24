@@ -1,8 +1,3 @@
-" Extra configuration for Vimwiki documents
-if &filetype !=# 'vimwiki' || v:version < 700
-  finish
-endif
-
 if !exists('b:undo_ftplugin')
   let b:undo_ftplugin = ''
 endif
