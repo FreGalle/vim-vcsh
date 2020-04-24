@@ -11,6 +11,11 @@ endif
 " Respect typed casing on auto-completion
 set infercase
 
+" Stop here if the user doesn't want ftplugin mappings
+if exists('no_plugin_maps') || exists('no_vimwiki_maps')
+  finish
+endif
+
 " Instant preview using vim-markdown-preview
 nnoremap <buffer> <LocalLeader>p :InstantMarkdownPreview<CR>
 let b:undo_ftplugin .= '|nunmap <buffer> <LocalLeader>p'
