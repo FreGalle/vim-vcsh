@@ -3,6 +3,12 @@ if &filetype !=# 'html'
   finish
 endif
 
+" Spellcheck documents we're actually editing (not just viewing)
+if &modifiable && !&readonly
+  setlocal spell
+  let b:undo_ftplugin .= '|setlocal spell<'
+endif
+
 " Use tidy(1) for checking and program formatting
 compiler tidy
 setlocal equalprg=tidy\ -quiet
