@@ -4,7 +4,3 @@ if has('packages') && !has('nvim')
 else
   silent! runtime macros/matchit.vim
 endif
-
-" Never used these and don't understand what they do
-silent! unmap [%
-silent! unmap ]%
