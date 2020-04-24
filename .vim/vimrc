@@ -44,6 +44,9 @@ endif
 " Give me a prompt instead of just rejecting risky :write, :saveas
 set confirm
 
+" Highlight the line the cursor is on
+set cursorline
+
 " Adjust diff mode settings
 set diffopt+=vertical            " Start diff mode using vertical splits
 set diffopt+=indent-heuristic    " Use indent heuristic for internal diff engine
