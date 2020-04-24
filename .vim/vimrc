@@ -199,6 +199,17 @@ if exists('+virtualedit')
   set virtualedit+=block
 endif
 
+" Define a list of patterns to ignore for file and directory command line
+" completion.  Files and directories with names matching any of these patterns
+" won’t be presented as candidates for tab completion on the command line.
+set wildignore=*~,#*#,*.7z,.DS_Store,.git,.hg,.svn,*.a,*.adf,*.asc,*.au,*.aup
+      \,*.avi,*.bin,*.bmp,*.bz2,*.class,*.db,*.dbm,*.djvu,*.docx,*.exe
+      \,*.filepart,*.flac,*.gd2,*.gif,*.gifv,*.gmo,*.gpg,*.gz,*.hdf,*.ico
+      \,*.iso,*.jar,*.jpeg,*.jpg,*.m4a,*.mid,*.mp3,*.mp4,*.o,*.odp,*.ods,*.odt
+      \,*.ogg,*.ogv,*.opus,*.pbm,*.pdf,*.png,*.ppt,*.psd,*.pyc,*.rar,*.rm
+      \,*.s3m,*.sdbm,*.sqlite,*.swf,*.swp,*.tar,*.tga,*.ttf,*.wav,*.webm,*.xbm
+      \,*.xcf,*.xls,*.xlsx,*.xpm,*.xz,*.zip
+
 " Wildmenu settings; see also plugin/wildignore.vim
 set wildmenu               " Use wildmenu
 set wildmode=list:longest  " Tab press completes and lists
