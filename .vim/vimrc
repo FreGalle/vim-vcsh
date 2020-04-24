@@ -265,6 +265,7 @@ nnoremap <Leader>b :<C-U>Buffers<CR>
 
 " <Leader>cf[rand] copies the current file name to system clipboard
 "   r: relative path a: absolute path n: filename d: directory name
+" Note that vinegar.vim has a y. mapping to copy absolute paths.
 nnoremap <leader>cfr :let @*=expand("%")<CR>
 nnoremap <leader>cfa :let @*=expand("%:p")<CR>
 nnoremap <leader>cfn :let @*=expand("%:t")<CR>
@@ -318,9 +319,3 @@ nnoremap <Leader><Delete> :bdelete<CR>
 
 " <Leader>% uses entire buffer as a linewise object; keeps position
 onoremap <Leader>% :<C-U>normal! mZ1GVG<CR>`Z:delm Z<CR>
-
-"
-" ----- File Type Settings -----
-"
-
-let g:netrw_banner=0
