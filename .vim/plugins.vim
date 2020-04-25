@@ -9,6 +9,7 @@ call minpac#init() "
 " }}}
 
 " Experimental {{{
+call minpac#add('https://sanctum.geek.nz/code/vim-spellfile-local', {'depth': 0})
 " }}}
 " General {{{
 call minpac#add('k-takata/minpac', {'type': 'opt'})
