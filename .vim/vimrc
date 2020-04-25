@@ -157,8 +157,8 @@ let &showbreak='↳ '
 " Show command while I'm typing it
 set showcmd
 
-" Show matching bracket briefly upon insert
-set showmatch
+" Disable 'showmatch' and let matchparen.vim handle this
+set noshowmatch
 
 " Show mode I'm in at the bottom of the screen
 set showmode
