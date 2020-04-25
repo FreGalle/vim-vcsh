@@ -331,6 +331,9 @@ vnoremap <Leader>y  "+y
 " <Leader>DEL deletes the current buffer
 nnoremap <Leader><Delete> :bdelete<CR>
 
+" <Leader>_ uses last changed or yanked text as an object
+onoremap <Leader>_ :<C-U>execute 'normal! `[v`]'<CR>
+
 " <Leader>%/5 uses entire buffer as a linewise object; keeps position
 xnoremap <Leader>% :<C-U>execute 'normal! 1GVG'<CR>
 onoremap <Leader>% :<C-U>execute 'normal! 1GVG'<CR>2<C-O>
