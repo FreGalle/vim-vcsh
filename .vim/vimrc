@@ -248,6 +248,9 @@ set wrapscan
 " Let space function as colon
 map <Space> :
 
+" Use backspace as an even quicker way to switch to previous buffer
+nnoremap <Backspace> <C-^>
+
 " Prevents from going into Ex-mode accidentally
 nnoremap Q <Nop>
 
