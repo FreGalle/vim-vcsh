@@ -331,6 +331,10 @@ vnoremap <Leader>y  "+y
 " <Leader>DEL deletes the current buffer
 nnoremap <Leader><Delete> :bdelete<CR>
 
+"
+" Custom text objects
+"
+
 " <Leader>_ uses last changed or yanked text as an object
 onoremap <Leader>_ :<C-U>execute 'normal! `[v`]'<CR>
 
