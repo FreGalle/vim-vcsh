@@ -83,7 +83,7 @@ endif
 set hidden
 
 " Keep much more command and search history
-set history=2000
+set history=10000
 
 " Highlight completed searches
 set hlsearch
