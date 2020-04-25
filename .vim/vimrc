@@ -230,10 +230,10 @@ set wildignore=*~,#*#,*.7z,.DS_Store,.git,.hg,.svn,*.a,*.adf,*.asc,*.au,*.aup
       \,*.xcf,*.xls,*.xlsx,*.xpm,*.xz,*.zip
 
 " Wildmenu settings; see also plugin/wildignore.vim
-set wildmenu               " Use wildmenu
-set wildmode=list:longest  " Tab press completes and lists
-set wildignorecase         " Case insensitive
-set wildcharm=<C-z>        " Set for use in mappings to invoke completion
+set wildmenu                   " Use wildmenu
+set wildmode=list:longest,full " Tab press completes and lists
+set wildignorecase             " Case insensitive
+set wildcharm=<C-z>            " Set for use in mappings to invoke completion
 
 " By default don't open files with line-wrapping
 set nowrap
