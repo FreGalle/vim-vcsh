@@ -126,6 +126,14 @@ set listchars+=nbsp:·      " Non-breaking spaces
 let mapleader=","
 let maplocalleader="\\"
 
+" If the leader is a comma, map double-tap comma to its original function in
+" the relevant modes so that I can still use it quickly without relying on
+" mapping 'timeout'.
+if mapleader ==# ','
+  noremap ,, ,
+  sunmap ,,
+endif
+
 " Enable usage of the mouse in all modes
 set mouse=a
 
