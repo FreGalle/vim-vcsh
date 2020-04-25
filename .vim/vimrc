@@ -205,6 +205,11 @@ set notimeout
 set ttimeout
 set ttimeoutlen=50
 
+" Enable smoother terminal redrawing for tmux
+if &term =~# '^tmux'
+  set ttyfast
+endif
+
 " Shorter delay for writing to swap file
 set updatetime=250
 
