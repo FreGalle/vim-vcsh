@@ -61,6 +61,9 @@ set encoding=utf-8
 " Set characters used for statuslines and vertical separators
 set fillchars=vert:\|,stl:\-,stlnc:\ ,fold:-,diff:┄
 
+" Always start with all folds of any practical depth open by default
+set foldlevel=256
+
 " Adjust automatic formatting
 set formatoptions+=c  " Wrap comments using 'textwidth'
 set formatoptions+=r  " Insert comment leader upon <Enter>
