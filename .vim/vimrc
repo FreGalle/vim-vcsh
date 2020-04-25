@@ -331,5 +331,8 @@ vnoremap <Leader>y  "+y
 " <Leader>DEL deletes the current buffer
 nnoremap <Leader><Delete> :bdelete<CR>
 
-" <Leader>% uses entire buffer as a linewise object; keeps position
-onoremap <Leader>% :<C-U>normal! mZ1GVG<CR>`Z:delm Z<CR>
+" <Leader>%/5 uses entire buffer as a linewise object; keeps position
+xnoremap <Leader>% :<C-U>execute 'normal! 1GVG'<CR>
+onoremap <Leader>% :<C-U>execute 'normal! 1GVG'<CR>2<C-O>
+xmap <Leader>5 <Leader>%
+omap <Leader>5 <Leader>%
