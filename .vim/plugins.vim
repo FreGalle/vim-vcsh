@@ -86,7 +86,7 @@ call minpac#add('KeitaNakamura/neodark.vim')
 call minpac#add('https://sanctum.geek.nz/code/vim-juvenile.git', {'depth': 0})
 " }}}
 " Project Management {{{
-call minpac#add('vimwiki/vimwiki', {'branch': 'dev'})
+call minpac#add('vimwiki/vimwiki')
 " }}}
 " Tmux integration (disabled) {{{
 " call minpac#add('christoomey/vim-tmux-navigator')
