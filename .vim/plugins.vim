@@ -5,7 +5,7 @@
 
 " Initialisation {{{
 packadd minpac
-call minpac#init() "
+call minpac#init({'status_open':'vertical'}) "
 " }}}
 
 " Experimental {{{
