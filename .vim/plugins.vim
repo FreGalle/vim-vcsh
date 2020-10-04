@@ -98,6 +98,8 @@ call minpac#add('vimwiki/vimwiki', {'branch': 'dev'})
 set rtp+=/usr/local/opt/fzf
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS = '--reverse'
 
 " FZF does not seem to correctly redraw its own background in Vim
 if !has('nvim')
