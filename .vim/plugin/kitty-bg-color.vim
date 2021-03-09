@@ -20,6 +20,8 @@ if $TERM=="xterm-kitty"
   augroup kitty
     au ColorScheme * call <SID>kitty_bg_color()
     au VimEnter    * call <SID>kitty_bg_color()
+    au VimResume   * call <SID>kitty_bg_color()
+    au VimSuspend  * call <SID>kitty_bg_color_reset()
     au VimLeavePre * call <SID>kitty_bg_color_reset()
   augroup END
 end
