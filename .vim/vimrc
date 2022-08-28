@@ -223,6 +223,8 @@ set notimeout
 set ttimeout
 set ttimeoutlen=50
 
+set title
+
 " Enable smoother terminal redrawing for tmux
 if &term =~# '^tmux'
   set ttyfast
