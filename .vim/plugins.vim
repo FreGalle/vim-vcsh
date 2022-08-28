@@ -147,10 +147,6 @@ let wiki_work.auto_tags = 1
 let wiki_work.nested_syntaxes = {'go': 'go'}
 
 let g:vimwiki_list = [wiki_personal, wiki_work]
-
-" au Filetype vimwiki nmap <buffer> <LocalLeader>x <Plug>VimwikiToggleListItem
-" au Filetype vimwiki nmap <buffer> <LocalLeader>j <Plug>VimwikiDiaryNextDay
-" au Filetype vimwiki nmap <buffer> <LocalLeader>k <Plug>VimwikiDiaryPrevDay
 " }}}
 " highlightedyank {{{
 let g:highlightedyank_highlight_duration = 400
