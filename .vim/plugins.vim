@@ -129,6 +129,7 @@ let g:undotree_SetFocusWhenToggle = 1
 " vimwiki {{{
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_global_ext = 0
+let g:vimwiki_automatic_nested_syntaxes = 1
 
 let wiki_personal = {}
 let wiki_personal.path = '~/Dropbox/Wikis/personal/'
