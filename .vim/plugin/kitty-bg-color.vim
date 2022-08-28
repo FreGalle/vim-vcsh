@@ -13,7 +13,7 @@ if $TERM=="xterm-kitty"
   endfun
 
   function! s:kitty_bg_color_reset()
-    let l:kitty_theme = $HOME."/.config/kitty/theme.conf"
+    let l:kitty_theme = $HOME."/.config/kitty/current-theme.conf"
     echom system("grep '^background ' ".l:kitty_theme." | tr -s ' ' = | xargs kitty @ set-colors")
   endfun
 
