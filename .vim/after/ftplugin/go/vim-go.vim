@@ -18,7 +18,9 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 0
 let g:go_highlight_variable_assignments = 0
 
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gopls"
+let g:go_fmt_experimental = 1
+let g:go_doc_popup_window = 1
 
 nnoremap <LocalLeader>gt :GoDeclsDir<cr>
 nnoremap <LocalLeader>gb :GoBuild<CR>
