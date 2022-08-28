@@ -103,11 +103,6 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS = '--reverse'
 
-" FZF does not seem to correctly redraw its own background in Vim
-if !has('nvim')
-  let g:fzf_colors = { 'fg': ['fg', 'Normal'], 'bg': ['bg', 'Normal']}
-endif
-" }}}
 " clam {{{
 let g:clam_winwidth = 84
 " }}}
