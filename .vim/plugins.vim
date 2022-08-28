@@ -14,6 +14,7 @@ call minpac#add('https://sanctum.geek.nz/code/vim-spellfile-local.git', {'depth'
 " General {{{
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('junegunn/fzf.vim')
+call minpac#add('gcmt/taboo.vim')
 " }}}
 " Text Editing {{{
 call minpac#add('junegunn/goyo.vim')
@@ -175,6 +176,10 @@ let g:instant_markdown_python = 1
 " }}}
 " vim-projectionist {{{
 let g:projectionist_heuristics = json_decode(join(readfile(expand('~/.vim/projections.json'))))
+" }}}
+" taboo.vim {{{
+let g:taboo_tab_format = ' [%N] %f%m '
+let g:taboo_renamed_tab_format = ' [%N] %l%m '
 " }}}
 
 " vim: tw=80 fdm=marker:
