@@ -22,5 +22,13 @@ let g:go_fmt_command = "gopls"
 let g:go_fmt_experimental = 1
 let g:go_doc_popup_window = 1
 
-nnoremap <LocalLeader>gt :GoDeclsDir<cr>
+nnoremap <LocalLeader>gd :GoDiagnostics<CR>
+nnoremap <LocalLeader>gt :GoDeclsDir<CR>
 nnoremap <LocalLeader>gb :GoBuild<CR>
+nnoremap <LocalLeader>gr :GoReferrers<CR>
+
+nnoremap <LocalLeader>i   <Plug>(go-info)
+nnoremap <LocalLeader>ii  <Plug>(go-implements)
+nnoremap <LocalLeader>ci  <Plug>(go-describe)
+nnoremap <LocalLeader>cc  <Plug>(go-callers)
+
