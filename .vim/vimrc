@@ -291,6 +291,9 @@ vnoremap . :norm.<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Visually select previously pasted text
+nnoremap gp `[v`]
+
 " Remap normal/visual & to preserve substitution flags
 nnoremap <silent> & :&&<CR>
 xnoremap <silent> & :&&<CR>
