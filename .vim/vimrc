@@ -7,8 +7,8 @@ filetype plugin indent on
 " Use syntax highlighting
 syntax enable
 
-colorscheme gruvbox
-set background=light
+colorscheme night-owl
+set background=dark
 
 " Set default indent settings; tweak on a per-filetype basis
 set autoindent    " Use indent of previous line on new lines
