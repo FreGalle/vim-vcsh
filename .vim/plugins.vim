@@ -17,6 +17,7 @@ call minpac#add('junegunn/fzf.vim')
 " }}}
 " Text Editing {{{
 call minpac#add('junegunn/goyo.vim')
+call minpac#add('junegunn/limelight.vim')
 call minpac#add('junegunn/vim-easy-align')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('machakann/vim-highlightedyank')
