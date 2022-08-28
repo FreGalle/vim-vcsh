@@ -169,6 +169,9 @@ let g:instant_markdown_python = 1
 " vim-projectionist {{{
 let g:projectionist_heuristics = json_decode(join(readfile(expand('~/.vim/projections.json'))))
 " }}}
+" vim-rhubarb {{{
+let g:github_enterprise_urls = ['https://git.hubteam.com']
+" }}}
 " taboo.vim {{{
 let g:taboo_tab_format = ' [%N] %f%m '
 let g:taboo_renamed_tab_format = ' [%N] %l%m '
