@@ -159,7 +159,7 @@ let g:matchup_matchparen_enabled = 0
 let g:vim_json_syntax_conceal = 0
 " }}}
 " vim-markdown {{{
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 0
 " }}}
 " vim-instant-markdown {{{
 let g:instant_markdown_slow = 1
