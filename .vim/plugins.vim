@@ -43,7 +43,7 @@ call minpac#add('https://sanctum.geek.nz/code/vim-foldlevelstart-stdin.git', {'d
 call minpac#add('https://sanctum.geek.nz/code/vim-insert-cancel.git', {'depth': 0})
 call minpac#add('https://sanctum.geek.nz/code/vim-insert-suspend-hlsearch.git', {'depth': 0})
 call minpac#add('https://sanctum.geek.nz/code/vim-insert-timeout.git', {'depth': 0})
-call minpac#add('https://sanctum.geek.nz/code/vim-quickfix-auto-open.git', {'depth': 0})
+" call minpac#add('https://sanctum.geek.nz/code/vim-quickfix-auto-open.git', {'depth': 0})
 call minpac#add('https://sanctum.geek.nz/code/vim-shebang-create-exec.git', {'depth': 0})
 call minpac#add('https://sanctum.geek.nz/code/vim-strip-trailing-whitespace.git', {'depth': 0})
 call minpac#add('https://sanctum.geek.nz/code/vim-uncap-ex.git', {'depth': 0})
