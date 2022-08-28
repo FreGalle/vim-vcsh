@@ -11,6 +11,12 @@ endif
 " Respect typed casing on auto-completion
 set infercase
 
+" I prefer wrapping in long-form text. Makes it easier to edit the text.
+set wrap
+set linebreak
+set textwidth=0
+let b:undo_ftplugin .= '|setlocal wrap< linebreak< textwidth<'
+
 " Stop here if the user doesn't want ftplugin mappings
 if exists('no_plugin_maps') || exists('no_vimwiki_maps')
   finish
