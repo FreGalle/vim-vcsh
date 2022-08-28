@@ -54,7 +54,7 @@ call minpac#add('https://sanctum.geek.nz/code/vim-uncap-ex.git', {'depth': 0})
 " call minpac#add('tpope/vim-git')
 " 2}}}
 call minpac#add('amadeus/vim-xml')
-call minpac#add('cespare/vim-toml')
+call minpac#add('cespare/vim-toml', {'rev': 'main'})
 call minpac#add('mechatroner/rainbow_csv')
 call minpac#add('ekalinin/Dockerfile.vim')
 call minpac#add('elzr/vim-json')
