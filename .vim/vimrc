@@ -42,7 +42,8 @@ set comments=
 
 " Add completion options
 if exists('+completeopt')
-  set completeopt+=longest  " Insert longest common substring
+  set completeopt-=preview  " I've found this to behave buggy in Go files
+  set completeopt+=noselect " Don't preselect a match
   set completeopt+=menuone  " Show the menu even if only one match
 endif
 
