@@ -23,7 +23,7 @@ call minpac#add('junegunn/vim-easy-align')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('mbbill/undotree')
-call minpac#add('mihais/vim-mark')
+call minpac#add('mihais/vim-mark') " TODO look into https://github.com/inkarkat/vim-mark
 call minpac#add('nelstrom/vim-visual-star-search')
 call minpac#add('suan/vim-instant-markdown', {'type': 'opt'})
 call minpac#add('tpope/vim-abolish')
