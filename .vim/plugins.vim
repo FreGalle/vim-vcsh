@@ -68,7 +68,7 @@ call minpac#add('https://sanctum.geek.nz/code/vim-make-target.git', {'depth': 0}
 call minpac#add('AndrewRadev/linediff.vim')
 call minpac#add('AndrewRadev/splitjoin.vim')
 call minpac#add('andymass/vim-matchup')
-call minpac#add('airblade/vim-gitgutter')
+call minpac#add('airblade/vim-gitgutter', {'rev': 'main'})
 call minpac#add('sjl/clam.vim')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
