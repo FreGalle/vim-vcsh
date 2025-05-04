@@ -18,5 +18,15 @@
       "alternate": "{}.up.sql",
       "type": "down"
     }
+  },
+  "pom.xml|.mvn": {
+    "src/main/java/*.java": {
+      "alternate": "src/test/java/{}Test.java",
+      "type": "source"
+    },
+    "src/test/java/*Test.java": {
+      "alternate": "src/main/java/{}.java",
+      "type": "test"
+    }
   }
 }
