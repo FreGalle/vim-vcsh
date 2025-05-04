@@ -32,3 +32,5 @@ nnoremap <LocalLeader>ii  <Plug>(go-implements)
 nnoremap <LocalLeader>ci  <Plug>(go-describe)
 nnoremap <LocalLeader>cc  <Plug>(go-callers)
 
+" TODO Go->SQL substitution
+" '<,'>s/"[\s+]\?\(\s+\)\?//g
