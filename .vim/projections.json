@@ -8,5 +8,15 @@
       "alternate": "{}.go",
       "type": "test"
     }
+  },
+  "*.sql": {
+    "*.up.sql": {
+      "alternate": "{}.down.sql",
+      "type": "up"
+    },
+    "*.down.sql": {
+      "alternate": "{}.up.sql",
+      "type": "down"
+    }
   }
 }
