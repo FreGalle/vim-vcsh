@@ -156,7 +156,9 @@ set nrformats-=octal
 set nonumber
 
 " Toggle 'paste' mode to insert a copied piece of text literally
-set pastetoggle=<F3>
+if !has('nvim')
+  set pastetoggle=<F3>
+endif
 
 " Options for file search with gf/:find
 set path-=/usr/include  " Let the C/C++ filetypes set that
