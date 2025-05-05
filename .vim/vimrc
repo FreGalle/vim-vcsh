@@ -345,6 +345,7 @@ nnoremap <Leader>e :<C-U>setlocal modifiable noreadonly undofile undolevels=50<C
 
 " <Leader>f opens the fuzzy file finder
 nnoremap <Leader>f :<C-U>Files<CR>
+nnoremap <Leader>- :<C-U>Files %:p:h<CR>
 
 " <Leader>g changes directory to the current file's location (window)
 nnoremap <Leader>g :<C-U>lcd %:h<CR>:pwd<CR>
