@@ -95,6 +95,9 @@ call minpac#add('haishanh/night-owl.vim')
 call minpac#add('rakr/vim-one')
 call minpac#add('KeitaNakamura/neodark.vim')
 call minpac#add('https://sanctum.geek.nz/code/vim-juvenile.git', {'depth': 0})
+call minpac#add('alexxGmZ/e-ink.nvim')
+call minpac#add('folke/tokyonight.nvim')
+call minpac#add('catppuccin/nvim', {'name': 'catppuccin'})
 " }}}
 " Project Management {{{
 call minpac#add('vimwiki/vimwiki')
