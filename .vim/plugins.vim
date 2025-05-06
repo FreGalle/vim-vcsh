@@ -187,7 +187,6 @@ let g:github_enterprise_urls = ['https://git.hubteam.com']
 let g:taboo_tab_format = ' [%N] %f%m '
 let g:taboo_renamed_tab_format = ' [%N] %l%m '
 " }}}
-
 " CopilotChat.nvim {{{
 lua << EOF
 require("CopilotChat").setup {
@@ -199,5 +198,9 @@ require("CopilotChat").setup {
 }
 EOF
 " }}}
+" qadzek/link.vim {{{
+let g:link_enabled_filetypes = [ 'markdown', 'gitcommit', 'vimwiki' ]
+" }}}
+
 
 " vim: tw=80 fdm=marker:
