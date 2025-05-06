@@ -7,7 +7,7 @@ filetype plugin indent on
 " Use syntax highlighting
 syntax enable
 
-colorscheme night-owl
+colorscheme tokyonight-moon
 set background=dark
 
 " Set default indent settings; tweak on a per-filetype basis
