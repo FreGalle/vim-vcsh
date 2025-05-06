@@ -79,6 +79,7 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
 call minpac#add('rbong/vim-flog')
+call minpac#add('github/copilot.vim')
 " }}}
 " Colorschemes {{{
 call minpac#add('sjl/badwolf')
