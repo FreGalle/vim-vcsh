@@ -80,6 +80,8 @@ call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
 call minpac#add('rbong/vim-flog')
 call minpac#add('github/copilot.vim')
+call minpac#add('nvim-lua/plenary.nvim')
+call minpac#add('CopilotC-Nvim/CoPilotChat.nvim')
 " }}}
 " Colorschemes {{{
 call minpac#add('sjl/badwolf')
@@ -179,6 +181,18 @@ let g:github_enterprise_urls = ['https://git.hubteam.com']
 " taboo.vim {{{
 let g:taboo_tab_format = ' [%N] %f%m '
 let g:taboo_renamed_tab_format = ' [%N] %l%m '
+" }}}
+
+" CopilotChat.nvim {{{
+lua << EOF
+require("CopilotChat").setup {
+  mappings = {
+    complete = {
+      insert = '<S-Tab>',
+    }
+  }
+}
+EOF
 " }}}
 
 " vim: tw=80 fdm=marker:
