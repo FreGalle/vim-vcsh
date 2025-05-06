@@ -82,6 +82,7 @@ call minpac#add('rbong/vim-flog')
 call minpac#add('github/copilot.vim')
 call minpac#add('nvim-lua/plenary.nvim')
 call minpac#add('CopilotC-Nvim/CoPilotChat.nvim')
+call minpac#add('sindrets/diffview.nvim')
 " }}}
 " Colorschemes {{{
 call minpac#add('sjl/badwolf')
