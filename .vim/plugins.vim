@@ -78,6 +78,7 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
+call minpac#add('rbong/vim-flog')
 " }}}
 " Colorschemes {{{
 call minpac#add('sjl/badwolf')
