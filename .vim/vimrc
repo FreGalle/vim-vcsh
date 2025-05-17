@@ -152,8 +152,8 @@ set mouse=a
 " Treat numbers with a leading zero as decimal, not octal
 set nrformats-=octal
 
-" Don't show line numbers by default; more screen real estate
-set nonumber
+" Show line numbers
+set number
 
 " Toggle 'paste' mode to insert a copied piece of text literally
 if !has('nvim')
