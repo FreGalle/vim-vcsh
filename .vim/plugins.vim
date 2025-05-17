@@ -84,6 +84,7 @@ call minpac#add('nvim-lua/plenary.nvim')
 call minpac#add('CopilotC-Nvim/CoPilotChat.nvim')
 call minpac#add('sindrets/diffview.nvim')
 call minpac#add('crusj/structrue-go.nvim')
+call minpac#add('fladson/vim-kitty')
 " }}}
 " Colorschemes {{{
 call minpac#add('sjl/badwolf')
