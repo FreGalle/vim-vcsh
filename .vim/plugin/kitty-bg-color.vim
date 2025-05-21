@@ -8,13 +8,13 @@ if $TERM=="xterm-kitty"
         " Original code used to transform a color number into the hex color
         " let l:color=system("kitty @ get-colors | grep 'color".l:num_color." '")
         " let l:color=l:color[match(l:color, "#"):]
-        echom system("kitty @ set-colors background=".l:num_color)
+        echom system("kitty @ set-colors --match id:$KITTY_WINDOW_ID background=".l:num_color)
       end
   endfun
 
   function! s:kitty_bg_color_reset()
     let l:kitty_theme = $HOME."/.config/kitty/current-theme.conf"
-    echom system("grep '^background ' ".l:kitty_theme." | tr -s ' ' = | xargs kitty @ set-colors")
+    echom system("grep '^background ' ".l:kitty_theme." | tr -s ' ' = | xargs kitty @ set-colors --match id:$KITTY_WINDOW_ID")
   endfun
 
   augroup kitty
