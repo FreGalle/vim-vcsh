@@ -30,6 +30,11 @@ let b:undo_ftplugin .= '|nunmap <buffer> <LocalLeader>p'
 iabbrev <expr> <buffer> :d strftime("%Y-%m-%d")
 iabbrev <expr> <buffer> :t strftime("%H:%M")
 
+" Disable conversion of internal links in the link.vim plugin
+if exists(':LinkConvertAll')
+  let g:link_disable_internal_links = 1
+endif
+
 " Quote operator
 nnoremap <buffer> <expr> <LocalLeader>q
       \ quote#Quote()
