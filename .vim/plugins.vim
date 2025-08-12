@@ -150,6 +150,7 @@ let wiki_personal.syntax = 'markdown'
 let wiki_personal.ext = '.md'
 let wiki_personal.auto_toc = 1
 let wiki_personal.auto_tags = 1
+let wiki_personal.maxhi = 1
 
 let wiki_work = {}
 let wiki_work.path = '~/Dropbox/Wikis/work/'
@@ -158,6 +159,7 @@ let wiki_work.ext = '.md'
 let wiki_work.auto_toc = 1
 let wiki_work.auto_tags = 1
 let wiki_work.nested_syntaxes = {'go': 'go'}
+let wiki_work.maxhi = 1
 
 let g:vimwiki_list = [wiki_personal, wiki_work]
 " }}}
