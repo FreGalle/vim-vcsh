@@ -67,6 +67,7 @@ call minpac#add('stephpy/vim-yaml')
 call minpac#add('uarun/vim-protobuf')
 call minpac#add('https://sanctum.geek.nz/code/vim-make-target.git', {'depth': 0})
 call minpac#add('neovimhaskell/haskell-vim')
+call minpac#add('prisma/vim-prisma')
 " 1}}}
 " Programming {{{
 call minpac#add('AndrewRadev/linediff.vim')
