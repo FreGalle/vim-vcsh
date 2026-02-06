@@ -7,7 +7,11 @@ filetype plugin indent on
 " Use syntax highlighting
 syntax enable
 
-colorscheme tokyonight-moon
+if has('nvim')
+  colorscheme tokyonight-moon
+else
+  colorscheme neodark
+endif
 set background=dark
 
 " Set default indent settings; tweak on a per-filetype basis
