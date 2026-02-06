@@ -81,9 +81,7 @@ call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-rhubarb')
 call minpac#add('tpope/vim-surround')
 call minpac#add('rbong/vim-flog')
-call minpac#add('github/copilot.vim')
 call minpac#add('nvim-lua/plenary.nvim')
-call minpac#add('CopilotC-Nvim/CoPilotChat.nvim')
 call minpac#add('sindrets/diffview.nvim')
 call minpac#add('crusj/structrue-go.nvim')
 call minpac#add('fladson/vim-kitty')
@@ -191,17 +189,6 @@ let g:github_enterprise_urls = ['https://git.hubteam.com']
 " taboo.vim {{{
 let g:taboo_tab_format = ' [%N] %f%m '
 let g:taboo_renamed_tab_format = ' [%N] %l%m '
-" }}}
-" CopilotChat.nvim {{{
-lua << EOF
-require("CopilotChat").setup {
-  mappings = {
-    complete = {
-      insert = '<S-Tab>',
-    }
-  }
-}
-EOF
 " }}}
 " qadzek/link.vim {{{
 let g:link_enabled_filetypes = [ 'markdown', 'gitcommit', 'vimwiki' ]
