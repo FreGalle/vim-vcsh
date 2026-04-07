@@ -5,7 +5,7 @@
 
 " Initialisation {{{
 packadd minpac
-call minpac#init({'status_open':'vertical'}) "
+call minpac#init({'status_open': 'vertical', 'git': expand('~/.vim/bin/git')}) "
 " }}}
 
 " Experimental {{{
